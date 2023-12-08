@@ -38,9 +38,6 @@ nav {
     align-items: center;
     gap: 1.35rem;
 
-    navlink {
-      cursor: pointer;
-    }
     a {
       font-size: 1.5rem;
       font-weight: 700;
@@ -87,26 +84,6 @@ nav {
   align-item: center;
   object-fit: contain;
   -o-object-fit: contain;
-  position: relative;
-  .sliderbtn {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #d47b3b;
-    position: absolute;
-    margin-right: -2rem;
-    margin-top: 5px;
-    top: 24rem;
-    right: 230px;
-    width: 13rem;
-    height: 4rem;
-    font-size: 20px;
-    font-weight: 700;
-    color: #ccc;
-    cursor: pointer;
-    border: none;
-  }
 }
 .slidertwo {
   width: 100vw;
@@ -166,7 +143,7 @@ nav {
       align-items: center;
     }
 
-    .btnname {
+    /*.btnname {
       background: transparent;
       box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
       width: 10rem;
@@ -176,9 +153,24 @@ nav {
       color: #e4dede;
       border: 2px solid white;
       cursor: pointer;
+    }*/
+    .btnname2 {
+      background: transparent;
+      box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+      width: 10rem;
+      height: 3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 15px;
+      font-weight: 700;
+      color: #e4dede;
+      border: 2px solid white;
+      cursor: pointer;
     }
   }
 }
+
 .categoryimage-container {
   .categorypic1 {
     margin-top: 25px;
@@ -188,6 +180,8 @@ nav {
     .imagebtn7 {
       display: flex;
       position: absolute;
+      justify-content: center;
+      align-items: center;
       bottom: 45px;
       right: 50px;
       font-size: 25px;
@@ -199,6 +193,9 @@ nav {
         box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
         width: 10rem;
         height: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         font-size: 15px;
         font-weight: 700;
         color: #e4dede;
@@ -243,6 +240,9 @@ nav {
           width: 10rem;
           height: 3rem;
           font-size: 15px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
           font-weight: 700;
           color: #e4dede;
           cursor: pointer;
@@ -273,6 +273,9 @@ nav {
           box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
           width: 10rem;
           height: 3rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
           font-size: 15px;
           font-weight: 700;
           color: #e4dede;
@@ -332,8 +335,10 @@ nav {
         font-size: 15px;
         font-weight: 700;
         color: #e4dede;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         //border: 2px solid white;
-        cursor: pointer;
       }
     }
   }
@@ -367,11 +372,15 @@ nav {
           justify-content: center;
           align-items: center;
         }
+
         .categorybtn {
           background: transparent;
           box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
           width: 10rem;
           height: 3rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
           font-size: 15px;
           font-weight: 700;
           color: #e4dede;
@@ -433,6 +442,159 @@ nav {
       color: #fff;
       border: none;
       cursor: pointer;
+    }
+  }
+}
+//datastyles
+.menshoes {
+  //margin: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.imagemenshoe {
+  max-width: 100%;
+  height: auto;
+  margin-right: 10px;
+}
+.pricemenshoe {
+  color: black;
+  font-size: 17px;
+  font-weight: 200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.namemenshoe {
+  color: #1e201e;
+  font-size: 16px;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menpic {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //height: 100vh;
+  margin: 0;
+  background-color: #afa7a7;
+}
+.menimgsub {
+  font-size: 30px;
+  font-weight: 550;
+  display: block;
+  color: rgb(11, 112, 11);
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 0.5rem;
+  margin-left: 5rem;
+  gap: 4rem;
+  .menpicpara {
+    font-size: 16px;
+    margin-top: 0.5rem;
+    font-weight: 200;
+    color: black;
+  }
+}
+
+.menshoedata {
+  /*display: flex;
+  //flex-wrap: wrap;
+  background-color: #082c09;
+  justify-content: center;
+  margin-top: 2rem;*/
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); // Display three images in one column
+  gap: 30px; // Adjust the gap between images
+  max-width: 20px; // Optional: Limit the width of the grid
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-bottom: 3rem;
+
+  //
+}
+.menshoes {
+  display: flex;
+  gap: 3;
+  //justify-content: space-between;
+  text-align: center;
+  width: 20rem;
+  height: auto;
+  border-radius: 3px solid;
+  margin-top: 30px;
+  text-align: center;
+  .imagemenshoe {
+    width: 100%;
+    height: auto;
+  }
+  .quantity-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 2rem;
+
+    .quantity-btn {
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      padding: 8px;
+      background-color: rgb(14, 102, 64);
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+    }
+
+    .quantity {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 2px;
+      margin-right: 0.5rem;
+      color: #1e201e;
+    }
+
+    .quantity-btn:first-child {
+      margin-right: 5px; // Add margin to the right of the "+" button
+    }
+  }
+  .cartbtns {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  .add-to-cart-btn,
+  .buy-now-btn {
+    background-color: #0f451a;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+
+    .details {
+      border-radius: 3px solid;
+      .namemenshoe {
+        font-size: 16px;
+        font-weight: 100;
+        color: #1e201e;
+
+        .pricemenshoe {
+          font-size: 16px;
+          font-weight: 100;
+        }
+        .sizemenshoe {
+          font-size: 16px;
+          font-weight: 100;
+        }
+      }
     }
   }
 }

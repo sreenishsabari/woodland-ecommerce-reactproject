@@ -1,79 +1,85 @@
 // src/components/Login.scss
 .login-container {
-  background-image: url(../../images/loginbg.jpg);
-  background-position: center center;
-  background-size: cover;
   display: flex;
   justify-content: center;
+
   align-items: center;
-  height: 100vh;
-  border: 1px solid #ccc;
-  padding: 20px;
-  border: none;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+  margin-top: 15rem;
+  margin-bottom: 14rem;
 
-.login-form {
-  display: flex;
-  //background-color: #f5f7f3;
-  background-color: #154d17;
-  //background: transparent;
-  //box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 10px;
-  width: 20rem;
-  height: 19rem;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid green;
-  border-radius: 15px;
-}
+  //position: relative;
+  border-radius: 5px;
 
-button {
-  //background-color: #154d17;
-  color: #fff;
-  //padding: 10px;
-  //border-radius: 20px solid blue;
-  cursor: pointer;
-  //width: 15rem;
-}
+  //border: none;
+  box-shadow: #f8fbf8;
+  .login-form {
+    background-image: url(../../images/loginpic.jpg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2rem;
+    background-size: cover;
+    background-position: center;
+    width: 40rem;
+    height: 25rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    //border-top-left-radius: 2rem;
+    border-radius: 2rem;
+    //border: 2px solid rgb(28, 61, 94);
+    h2 {
+      color: #f8faf8;
+      font-weight: 700;
+      font-size: 35px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .logininput {
+      margin-right: 1.6rem;
+      color: #171817;
+    }
+    .loginla {
+      color: #c3c8c3;
+      font-size: 23px;
+      font-weight: 500;
+      margin-right: 9rem;
+    }
+    .loginla1 {
+      color: #ced3ce;
+      font-size: 23px;
+      font-weight: 500;
+      margin-right: 12rem;
+    }
 
-button:hover {
-  background-color: #45a049;
-}
+    .buttonsec {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: #fff;
+      margin-right: 4rem;
+      background-color: #1fbc24;
+      border: 2px solid green;
+      height: 2rem;
+      border-radius: 20px;
+      cursor: pointer;
+      width: 14rem;
+    }
+    .spantext {
+      margin-top: 1rem;
+      margin-right: 2rem;
+      color: #f8fbf8;
+    }
+    .buttonlink {
+      margin-top: 1rem;
+      color: #f8fbf8;
+    }
+  }
 
-// src/components/Signup.scss
-.signup-container {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.signup-form {
-  display: flex;
-  flex-direction: column;
-  max-width: 300px;
-  margin: 0 auto;
-}
-
-label {
-  margin-top: 10px;
-}
-
-input {
-  padding: 10px;
-  margin-bottom: 15px;
-}
-
-button {
-  background-color: #4caf50;
-  color: #fff;
-  padding: 10px;
-  border: none;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #45a049;
+  .buttonsec:hover {
+    background-color: #45a049;
+  }
 }

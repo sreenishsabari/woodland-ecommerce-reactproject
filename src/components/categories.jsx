@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Category = () => {
   return (
     <div className="categoryimage-container">
@@ -8,7 +10,9 @@ const Category = () => {
           className="categorypic1"
         />
         <div className="imagebtn7">
-          <button className="btnpic7">SHOP NOW</button>
+          <Link to="/outdoor" className="btnpic7">
+            SHOP NOW
+          </Link>
         </div>
       </div>
       <div className="categoryimage1-container">
@@ -16,14 +20,18 @@ const Category = () => {
           <img src="./src/images/pic8.jpg" alt="categorypic2" />
           <div className="mencategory">
             <span className="menpara">Shop Men’s Apparel</span>
-            <button className="menbtn">SHOP NOW</button>
+            <Link to="/menapparel" className="menbtn">
+              SHOP NOW
+            </Link>
           </div>
         </div>
         <div className="womenimage">
           <img src="./src/images/pic9.jpg" alt="categorypic3" />
           <div className="womencategory">
             <span className="womenpara">Shop Women’s Apparel</span>
-            <button className="womenbtn">SHOP NOW</button>
+            <Link to="womenapparel" className="womenbtn">
+              SHOP NOW
+            </Link>
           </div>
         </div>
       </div>

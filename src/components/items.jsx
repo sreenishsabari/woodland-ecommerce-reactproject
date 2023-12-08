@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 const Items = () => {
   return (
     <div className="bannerimage-container">
@@ -6,21 +7,27 @@ const Items = () => {
           <img src="./src/images/pic15.jpg" alt="categorypic8" />
           <div className="categorysecname">
             <span className="categoryheading">Bags</span>
-            <button className="categorybtn">SHOP NOW</button>
+            <Link to="/bagbtn" className="categorybtn">
+              SHOP NOW
+            </Link>
           </div>
         </div>
         <div className="categorysecbtn">
           <img src="./src/images/pic16.jpg" alt="categorypic9" />
           <div className="categorysecname">
             <span className="categoryheading">Boxers</span>
-            <button className="categorybtn">SHOP NOW</button>
+            <Link to="/boxerbtn" className="categorybtn">
+              SHOP NOW
+            </Link>
           </div>
         </div>
         <div className="categorysecbtn">
           <img src="./src/images/pic17.jpg" alt="categorypic10" />
           <div className="categorysecname">
             <span className="categoryheading">Belts</span>
-            <button className="categorybtn">SHOP NOW</button>
+            <Link to="/beltsbtn" className="categorybtn">
+              SHOP NOW
+            </Link>
           </div>
         </div>
       </div>
