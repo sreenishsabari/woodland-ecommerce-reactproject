@@ -7,7 +7,7 @@ export const UserProvider = ({ children }) => {
   const [userName, setUserName] = useState(null);
 
   const [formFields, setFormFields] = useState({
-    userName: "",
+    displayName: "",
     email: "",
     password: "",
     confirmPassword: "",

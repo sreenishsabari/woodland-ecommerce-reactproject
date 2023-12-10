@@ -7,10 +7,20 @@ import {
   signInWithPopup,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
 } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
-import { doc, getDoc, setDoc } from "firebase/firestore";
+import {
+  doc,
+  getDoc,
+  setDoc,
+  collection,
+  writeBatch,
+  query,
+  getDocs,
+} from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -44,6 +54,12 @@ const signInAuthWithEmailAndPassword = async (email, password) => {
   if (!email && !password) return;
   return signInWithEmailAndPassword(auth, email, password);
 };
+//create a method for signOut
+const signOutUser = () => signOut(commerceAuth);
+
+//create a method of onAuthStateChange
+const onAuthStateChangedListener = (callback) =>
+  onAuthStateChanged(commerceAuth, callback);
 
 //firestoredatabase
 const db = getFirestore(app);
@@ -83,12 +99,47 @@ const createUserDocumentFromAuth = async (
 
   return userDocRef;
 };
+//create method for add collection and Documents from local to firebase
+const addCollectionAndDocuments = async (
+  collectionKey,
+  objectsToAdd,
+  field = "title"
+) => {
+  const collectionRef = collection(db, collectionKey);
+  const batch = writeBatch(db);
+
+  objectsToAdd.forEach((object) => {
+    const docRef = doc(collectionRef, object[field].toLowerCase());
+    batch.set(docRef, object);
+  });
+
+  await batch.commit();
+};
+//create method for getting data from firestore
+const getCategoriesAndDocuments = async () => {
+  const collectionRef = collection(db, "categories");
+  const q = query(collectionRef);
+
+  const querySnapShot = await getDocs(q);
+
+  const categoryMap = querySnapShot.docs.reduce((acc, docsSnapShot) => {
+    const { title, items } = docsSnapShot.data();
+    acc[title.toLowerCase()] = items;
+    return acc;
+  }, {});
+
+  return categoryMap;
+};
 
 export {
   signInWithGooglePopup,
   createUserDocumentFromAuth,
   signUpAuthWithEmailAndPassword,
   signInAuthWithEmailAndPassword,
+  signOutUser,
+  onAuthStateChangedListener,
+  addCollectionAndDocuments,
+  getCategoriesAndDocuments,
 };
 
 /*async function createUser(email, password) {

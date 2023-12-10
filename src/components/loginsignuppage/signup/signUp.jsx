@@ -1,9 +1,10 @@
 import "./signup.scss";
-//import { useState } from "react";
+//import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   signUpAuthWithEmailAndPassword,
   createUserDocumentFromAuth,
+  signOutUser,
 } from "../../../utils/firebase";
 import { useUser } from "../../../components/context";
 console.log(useUser);
@@ -17,13 +18,13 @@ console.log(useUser);
 const SignUp = () => {
   const { formFields, setFormFields } = useUser();
   console.log(formFields);
-  const { userName, email, password, confrimPassword } = formFields;
+  const { displayName, email, password, confrimPassword } = formFields;
   let Navigate = useNavigate();
 
   const submitHandler = async (e) => {
     e.preventDefault();
     Navigate("/contact");
-    if (!userName || !email) {
+    if (!displayName || !email) {
       alert(`All the fields are Mandatory`);
       return;
     }
@@ -36,12 +37,18 @@ const SignUp = () => {
       const { user } = await signUpAuthWithEmailAndPassword(email, password);
       console.log(user);
       const userDocRef = await createUserDocumentFromAuth(user, {
-        userName,
+        displayName,
       });
-
+      signOutUser();
+      //pagenavigation
+      loginPage();
       console.log(userDocRef);
     } catch (err) {
-      console.log(`Error Occurred while registering`, err.message);
+      if (err.code === `auth/email-already-in-use`) {
+        alert(`Email already exists`);
+      } else {
+        console.log(`Error Occurred while registering`, err.message);
+      }
     }
   };
   const changeHandler = (e) => {
@@ -59,13 +66,13 @@ const SignUp = () => {
       <form onSubmit={submitHandler}>
         <h2>Don&apos;t have an account?</h2>
         <span>Sign Up with your email and password</span>
-        <label htmlFor="userName">UserName:</label>
+        <label htmlFor="displayName">UserName:</label>
         <input
           type="text"
-          id="userName"
-          name="userName"
+          id="displayName"
+          name="displayName"
           required
-          value:userName
+          value:displayName
           onChange={changeHandler}
         />
         <label htmlFor="email">Email:</label>

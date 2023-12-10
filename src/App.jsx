@@ -17,6 +17,7 @@ import {
   Kids,
   Women,
   MenApparel,
+  CategoryPage,
 } from "./routes/root/index";
 
 const router = createBrowserRouter([
@@ -38,28 +39,18 @@ const router = createBrowserRouter([
         element: <MenSec />,
       },
       {
-        path: "/sneakerbtn",
-        element: <Sneaker />,
-      },
-      {
         path: "/newacbtn",
         element: <SignUp />,
       },
+
       {
-        path: "/bestbtn",
+        path: "/bestseller",
+        element: <CategoryPage />,
+      },
+
+      {
+        path: "/casuals",
         element: <Casuals />,
-      },
-      {
-        path: "/bootbtn",
-        element: <Boots />,
-      },
-      {
-        path: "/casualbtn",
-        element: <Casuals />,
-      },
-      {
-        path: "/menbtn",
-        element: <MenSec />,
       },
       {
         path: "/womenbtn",

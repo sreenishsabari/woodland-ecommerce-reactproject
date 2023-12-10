@@ -14,6 +14,7 @@ import Home from "../../pages/home";
 import ErrorPage from "../../error-page";
 import SignUp from "../../components/loginsignuppage/signup/signUp";
 import MenApparel from "../../utils/menapparel";
+import CategoryPage from "../../components/product-details";
 export {
   Root,
   Login,
@@ -30,4 +31,5 @@ export {
   Belts,
   Bags,
   MenApparel,
+  CategoryPage,
 };

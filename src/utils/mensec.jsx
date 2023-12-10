@@ -49,20 +49,20 @@ const MenShoes = () => {
             <p className="sizemenshoe">{props.size}</p>
             <div className="quantity-controls">
               <button
-                onClick={() => updateCart(props, "add")}
-                className="quantity-btn"
-              >
-                +
-              </button>
-              <span className="quantity">
-                {itemInCart ? itemInCart.quantity : 0}
-              </span>
-              <button
                 onClick={() => updateCart(props, "remove")}
                 className="quantity-btn"
                 disabled={!itemInCart}
               >
                 -
+              </button>
+              <span className="quantity">
+                {itemInCart ? itemInCart.quantity : 0}
+              </span>
+              <button
+                onClick={() => updateCart(props, "add")}
+                className="quantity-btn"
+              >
+                +
               </button>
             </div>
             <p className="total-price">
