@@ -4,29 +4,58 @@ import { FaRegHeart } from "react-icons/fa";
 import { IoMdContact } from "react-icons/io";
 import { FiShoppingBag } from "react-icons/fi";
 import { NavLink } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import Category from "./categories";
+import { useState } from "react";
 const Navbar = () => {
+  const location = useLocation();
+  const hideSearchAndLoginRoutes = ["/cartbag"];
+  const hideSearchForlogin = ["/contact"];
+
+  // Add routes where search and login should be hidden
+
+  const hiddenRoute = hideSearchForlogin.some((route) =>
+    location.pathname.includes(route)
+  );
+  const isHiddenRoute = hideSearchAndLoginRoutes.some((route) =>
+    location.pathname.includes(route)
+  );
+  //searchlogic
+
   return (
     <nav>
       <div>
         <img src="./src/assets/logo.png" alt="logo" />
       </div>
       <ul>
-        <li>
-          <NavLink to="/men">Men</NavLink>
-        </li>
-        <li>
-          <NavLink to="/women">Women</NavLink>
-        </li>
-        <li>
-          <NavLink to="/kids">Kids</NavLink>
-        </li>
-        <li>
-          <NavLink to="/bags&gear">Bags&Gear</NavLink>
-        </li>
+        {!isHiddenRoute && (
+          <>
+            <li>
+              <NavLink to="/home">Home</NavLink>
+            </li>
+            <li>
+              <NavLink to="/men">Men</NavLink>
+            </li>
+            <li>
+              <NavLink to="/women">Women</NavLink>
+            </li>
+            <li>
+              <NavLink to="/kids">Kids</NavLink>
+            </li>
+            <li>
+              <NavLink to="/bags&gear">Bags&Gear</NavLink>
+            </li>
+          </>
+        )}
       </ul>
+
       <div className="search-container">
-        <input type="text" placeholder="search.." />
-        <CgSearch className="search-icon" />
+        {!hiddenRoute && (
+          <>
+            <input type="text" placeholder="search.." />
+            <CgSearch className="search-icon" />
+          </>
+        )}
       </div>
       <div>
         <ul>
@@ -35,10 +64,15 @@ const Navbar = () => {
               <FaRegHeart />
             </a>
           </li>
+
           <li>
-            <a href="#">
-              <FiShoppingBag />
-            </a>
+            {!isHiddenRoute && (
+              <>
+                <NavLink to="/cartbag" className="cartbtn">
+                  <FiShoppingBag />
+                </NavLink>
+              </>
+            )}
           </li>
 
           <li>

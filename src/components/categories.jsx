@@ -1,14 +1,12 @@
 import { Link } from "react-router-dom";
+import pic7 from "../images/pic7.jpg";
+//import { MenApparel } from "../routes/root";
 
 const Category = () => {
   return (
     <div className="categoryimage-container">
       <div className="imagebtncategory">
-        <img
-          src="./src/images/pic7.jpg"
-          alt="categorypic1"
-          className="categorypic1"
-        />
+        <img src={pic7} alt="categorypic1" className="categorypic1" />
         <div className="imagebtn7">
           <Link to="/outdoor" className="btnpic7">
             SHOP NOW

@@ -1,37 +1,15 @@
+import { Link } from "react-router-dom";
 import Men from "../constants/mens";
+//import Addcart from "../components/cartitem";
+//import { useCart } from "../components/cartcontext";
 import { useState } from "react";
-const MenShoes = () => {
-  const [cart, setCart] = useState([]);
-
-  const updateCart = (item, action) => {
-    let updatedCart = [...cart];
-    const index = updatedCart.findIndex((cartItem) => cartItem.id === item.id);
-
-    if (action === "add") {
-      if (index !== -1) {
-        updatedCart[index].quantity += 1;
-      } else {
-        // Initialize totalPrice when adding a new item to the cart
-        const newItem = { ...item, quantity: 1, totalPrice: item.price };
-        updatedCart.push(newItem);
-      }
-    } else if (action === "remove") {
-      if (index !== -1 && updatedCart[index].quantity > 0) {
-        updatedCart[index].quantity -= 1;
-      }
-    }
-
-    // Update totalPrice based on the quantity
-    updatedCart.forEach((cartItem) => {
-      cartItem.totalPrice = cartItem.quantity * cartItem.price;
-    });
-
-    setCart(updatedCart);
-  };
-
+const MenShoes = ({ AddToCart }) => {
   const ItemShop = (props) => {
-    const itemInCart = cart.find((cartItem) => cartItem.id === props.id);
-
+    //const itemInCart = cart.find((cartItem) => cartItem.id === props.id);
+    const handleAddToCart = () => {
+      console.log("Add to Cart clicked for:2", props.name);
+      AddToCart(props); // Log relevant information or use debugger here
+    };
     const handleBuyNow = () => {
       // Implement the logic for the "Buy Now" action
       // This function will depend on how you want to handle the buy now functionality
@@ -47,34 +25,15 @@ const MenShoes = () => {
             <h2 className="namemenshoe">{props.name}</h2>
             <span className="pricemenshoe">{props.price}</span>
             <p className="sizemenshoe">{props.size}</p>
-            <div className="quantity-controls">
-              <button
-                onClick={() => updateCart(props, "remove")}
-                className="quantity-btn"
-                disabled={!itemInCart}
-              >
-                -
-              </button>
-              <span className="quantity">
-                {itemInCart ? itemInCart.quantity : 0}
-              </span>
-              <button
-                onClick={() => updateCart(props, "add")}
-                className="quantity-btn"
-              >
-                +
-              </button>
-            </div>
-            <p className="total-price">
-              Total Price: {itemInCart ? itemInCart.totalPrice : 0}
-            </p>
             <div className="cartbtns">
-              <button
-                onClick={() => addToCart(props)}
+              <Link
+                to="/cartbtns"
+                onClick={handleAddToCart}
                 className="add-to-cart-btn"
               >
                 Add to Cart
-              </button>
+              </Link>
+
               <button onClick={handleBuyNow} className="buy-now-btn">
                 Buy Now
               </button>

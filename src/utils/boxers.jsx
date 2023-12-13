@@ -1,15 +1,29 @@
 import Boxers from "../constants/boxers";
-const Boxer = () => {
+const Boxer = ({ addToCart }) => {
   const ItemShop = (props) => {
+    const handleBuyNow = () => {
+      console.log("Buy Now clicked for:", props.name);
+    };
+
     return (
       <div className="menshoes">
-        <div style={{ backgroundColor: "grey" }}>
-          <div className="productmenshoe">
-            <img className="imagemenshoe" src={props.image} />
-            <div className="details">
-              <h2 className="namemenshoe">{props.name}</h2>
-              <span className="pricemenshoe">{props.price}</span>
-              <p className="sizemenshoe">{props.size}</p>
+        <div className="productmenshoe">
+          <img className="imagemenshoe" src={props.image} />
+          <div className="details">
+            <h2 className="namemenshoe">{props.name}</h2>
+            <span className="pricemenshoe">{props.price}</span>
+            <p className="sizemenshoe">{props.size}</p>
+
+            <div className="cartbtns">
+              <button
+                onClick={() => addToCart(props)}
+                className="add-to-cart-btn"
+              >
+                Add to Cart
+              </button>
+              <button onClick={handleBuyNow} className="buy-now-btn">
+                Buy Now
+              </button>
             </div>
           </div>
         </div>

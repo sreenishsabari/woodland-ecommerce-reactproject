@@ -5,11 +5,14 @@ import "./styles/main.scss";
 import { UserProvider } from "./components/context.jsx";
 //import { CategoriesProvider } from "./context/categories.context.jsx";
 //import CategoriesProvider from "./context/categories.context.jsx";
+import { CartProvider } from "./components/cartcontext";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <UserProvider>
-      <App />
-    </UserProvider>
+    <CartProvider>
+      <UserProvider>
+        <App />
+      </UserProvider>
+    </CartProvider>
   </React.StrictMode>
 );

@@ -1,6 +1,7 @@
 import Root from "./root.route";
 import Login from "../../components/loginsignuppage/login";
 //import Authentication from "../../authentication/authentication.route";
+import Addcart from "../../components/cart";
 import MenSec from "../../utils/mensec";
 import Women from "../../utils/women";
 import Kids from "../../utils/kids";
@@ -13,7 +14,7 @@ import Sneaker from "../../utils/sneakers";
 import Home from "../../pages/home";
 import ErrorPage from "../../error-page";
 import SignUp from "../../components/loginsignuppage/signup/signUp";
-import MenApparel from "../../utils/menapparel";
+import MenWomenApparelPage from "../../components/menwomenapparel";
 import CategoryPage from "../../components/product-details";
 export {
   Root,
@@ -30,6 +31,7 @@ export {
   Boots,
   Belts,
   Bags,
-  MenApparel,
   CategoryPage,
+  Addcart,
+  MenWomenApparelPage,
 };

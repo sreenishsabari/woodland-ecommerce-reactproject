@@ -1,14 +1,26 @@
 import Belts from "../constants/belts";
-const Belt = () => {
+const Belt = ({ addToCart }) => {
   const ItemShop = (props) => {
+    const handleBuyNow = () => {
+      console.log("Buy Now clicked for:", props.name);
+    };
     return (
       <div className="menshoes">
-        <div style={{ backgroundColor: "grey" }}>
-          <div className="productmenshoe">
-            <img className="imagemenshoe" src={props.image} />
-            <div className="details">
-              <h2 className="namemenshoe">{props.name}</h2>
-              <span className="pricemenshoe">{props.price}</span>
+        <div className="productmenshoe">
+          <img className="imagemenshoe" src={props.image} />
+          <div className="details">
+            <h2 className="namemenshoe">{props.name}</h2>
+            <span className="pricemenshoe">{props.price}</span>
+            <div className="cartbtns">
+              <button
+                onClick={() => addToCart(props)}
+                className="add-to-cart-btn"
+              >
+                Add to Cart
+              </button>
+              <button onClick={handleBuyNow} className="buy-now-btn">
+                Buy Now
+              </button>
             </div>
           </div>
         </div>
@@ -17,7 +29,7 @@ const Belt = () => {
   };
   return (
     <div>
-      <img src="./src/images/menpic.jpg" alt="menpic" className="menpic" />
+      <img src="./src/images/belts.jpg" alt="menpic" className="menpic" />
       <span className="menimgsub">
         MENS BELTS
         <p className="menpicpara">

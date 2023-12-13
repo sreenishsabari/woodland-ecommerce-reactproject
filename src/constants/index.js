@@ -1,68 +1,70 @@
 const Categories = [
   {
     id: 1,
-    name: "Dark grey Bermuda shorts for men",
-    price: "price:₹400",
+    name: "Khaki pullover for men",
+    price: "price:₹1400",
     category: "Bestseller",
     imgUrl:
-      "https://www.woodlandworldwide.com/_next/image?url=https%3A%2F%2Fassets.woodlandworldwide.app%2Fcompressed%2Fimages%2FAGIW0430782A%2FDGREY%2FAGIW0430782A_017_0.jpg&w=1920&q=75",
+      "https://www.woodlandworldwide.com/_next/image?url=https%3A%2F%2Fassets.woodlandworldwide.app%2Fcompressed%2Fimages%2FAGIT26AF672A%2FKHAKI%2FAGIT26AF672A_023_0.jpg&w=1080&q=75",
   },
   {
     id: 2,
-    name: "NAVY/WHITE Checkered Shorts for Men",
-    price: "price:₹500",
+    name: "White Polo t-shirt for men",
+    price: "price:₹2000",
     category: "Bestseller",
     imgUrl:
-      "https://www.woodlandworldwide.com/_next/image?url=https%3A%2F%2Fassets.woodlandworldwide.app%2Fcompressed%2Fimages%2FAGIW0491702A%2FNAVY_WHITE%2FAGIW0491702A_223_0.jpg&w=1920&q=75",
+      "https://www.woodlandworldwide.com/_next/image?url=https%3A%2F%2Fassets.woodlandworldwide.app%2Fcompressed%2Fimages%2FGGTS02000021W%2FWHITE%2FGGTS02000021W_044_0.jpg&w=1920&q=75",
   },
   {
     id: 3,
-    name: "Black shorts for Men",
-    price: "price:₹600",
+    name: "MILITARY GREEN/BLACK and trekking bag 40L",
+    price: "price:₹4000",
     category: "Bestseller",
     imgUrl:
-      "https://www.woodlandworldwide.com/_next/image?url=https%3A%2F%2Fassets.woodlandworldwide.app%2Fcompressed%2Fimages%2FAGIW0491702A%2FNAVY_WHITE%2FAGIW0491702A_223_0.jpg&w=1920&q=75",
+      "https://www.woodlandworldwide.com/_next/image?url=https%3A%2F%2Fassets.woodlandworldwide.app%2Fcompressed%2Fimages%2FAUBG0263551A%2FMILITARY_GREEN_BLACK%2FAUBG0263551A_F28_0.jpg&w=1080&q=75",
   },
   {
     id: 4,
-    name: "Navy printed shorts for Men",
-    price: "price:₹600",
+    name: "Navy Sports Shoe for men",
+    price: "price:₹3500",
     category: "Bestseller",
     imgUrl:
-      "https://www.woodlandworldwide.com/_next/image?url=https%3A%2F%2Fassets.woodlandworldwide.app%2Fcompressed%2Fimages%2FAGIW0491622A%2FNAVY%2FAGIW0491622A_030_0.jpg&w=1920&q=75",
+      "https://www.woodlandworldwide.com/_next/image?url=https%3A%2F%2Fassets.woodlandworldwide.app%2Fcompressed%2Fimages%2FFGC0510S0062A%2FNAVY%2FFGC0510S0062A_030_0.jpg&w=1080&q=75",
   },
   {
     id: 5,
-    name: "Grey Shorts for men",
-    price: "price:800",
+    name: "Black multi sweater for women",
+    price: "price:2000",
     category: "Bestseller",
     imgUrl:
-      "https://www.woodlandworldwide.com/_next/image?url=https%3A%2F%2Fassets.woodlandworldwide.app%2Fcompressed%2Fimages%2FAGIW0491682A%2FGREY%2FAGIW0491682A_021_0.jpg&w=1080&q=75",
+      "https://www.woodlandworldwide.com/_next/image?url=https%3A%2F%2Fassets.woodlandworldwide.app%2Fcompressed%2Fimages%2FGLPO14000821A%2FBLACK_MULTI%2FGLPO14000821A_B67_0.jpg&w=1080&q=75",
   },
   {
     id: 6,
-    name: "Black shorts for Men",
-    price: "price:₹400",
+    name: "Lolive shirt for men",
+    price: "price:₹1500",
     category: "Bestseller",
     imgUrl:
-      "https://www.woodlandworldwide.com/_next/image?url=https%3A%2F%2Fassets.woodlandworldwide.app%2Fcompressed%2Fimages%2FAGIW04AG812A%2FBLACK%2FAGIW04AG812A_004_0.jpg&w=1080&q=75",
+      "https://www.woodlandworldwide.com/_next/image?url=https%3A%2F%2Fassets.woodlandworldwide.app%2Fcompressed%2Fimages%2FGGSH03000291B%2FLOLIVE%2FGGSH03000291B_383_0.jpg&w=1080&q=75",
   },
   {
     id: 7,
-    name: "Teal Blue Shorts for Men",
-    price: "price:₹1000",
+    name: "Lblue Shirt for women",
+    price: "price:₹1500",
     category: "Bestseller",
     imgUrl:
-      "https://www.woodlandworldwide.com/_next/image?url=https%3A%2F%2Fassets.woodlandworldwide.app%2Fcompressed%2Fimages%2FAGIW04AJ492A%2FTEAL_BLUE%2FAGIW04AJ492A_E11_0.jpg&w=1080&q=75",
+      "https://www.woodlandworldwide.com/_next/image?url=https%3A%2F%2Fassets.woodlandworldwide.app%2Fcompressed%2Fimages%2FGLSH30000032A%2FLBLUE%2FGLSH30000032A_238_0.jpg&w=1080&q=75",
   },
+
   {
     id: 8,
-    name: "Graphite shorts for men",
-    price: "price:₹600",
+    name: "Lblue Denim Jacket for Men",
+    price: "price:₹3000",
     category: "Bestseller",
     imgUrl:
-      "https://www.woodlandworldwide.com/_next/image?url=https%3A%2F%2Fassets.woodlandworldwide.app%2Fcompressed%2Fimages%2FAGIW0495162A%2FGRAPHITE%2FAGIW0495162A_410_0.jpg&w=1080&q=75",
+      "https://www.woodlandworldwide.com/_next/image?url=https%3A%2F%2Fassets.woodlandworldwide.app%2Fcompressed%2Fimages%2FGGJC45004092A%2FLBLUE%2FGGJC45004092A_238_0.jpg&w=1080&q=75",
   },
+
   {
     id: 9,
     name: "Camel Sneakers",
@@ -305,68 +307,68 @@ const Categories = [
   },
   {
     id: 41,
-    name: "SNAYPE hiking boots",
+    name: "Sulphur Quilted Jacket for Men",
     price: "₹2800",
-    category: "Men's",
+    category: "",
     imgUrl:
-      "https://www.woodlandworldwide.com/_next/image?url=https%3A%2F%2Fassets.woodlandworldwide.app%2Fcompressed%2Fimages%2FFGC099009251D%2FSNAYPE%2FFGC099009251D_386_0.jpg&w=1920&q=75",
+      "https://www.woodlandworldwide.com/_next/image?url=https%3A%2F%2Fassets.woodlandworldwide.app%2Fcompressed%2Fimages%2FGGJC05004102A%2FSULPHUR%2FGGJC05004102A_I93_0.jpg&w=1920&q=75",
   },
   {
     id: 42,
-    name: "Camel Nubuk Oily Polished Mens Boot",
+    name: "Electric blue Quilted Jacket for Men",
     price: "₹2500",
     category: "Men's",
     imgUrl:
-      "https://www.woodlandworldwide.com/_next/image?url=https%3A%2F%2Fassets.woodlandworldwide.app%2Fcompressed%2Fimages%2FFGC0AA050061A%2FCAMEL%2FFGC0AA050061A_010_0.jpg&w=1920&q=75",
+      "https://www.woodlandworldwide.com/_next/image?url=https%3A%2F%2Fassets.woodlandworldwide.app%2Fcompressed%2Fimages%2FGGJC05004162A%2FELECTRIC_BLUE%2FGGJC05004162A_943_0.jpg&w=1080&q=75",
   },
   {
     id: 43,
-    name: "Drifter DNAVY",
-    price: "₹5500",
-    category: "Men's",
-    imgUrl:
-      "https://www.woodlandworldwide.com/_next/image?url=https%3A%2F%2Fassets.woodlandworldwide.app%2Fcompressed%2Fimages%2FFGC015023331A%2FDNAVY%2FFGC015023331A_202_0.jpg&w=1920&q=75",
-  },
-  {
-    id: 44,
-    name: "Camel Boot for Men",
+    name: "Camouflage Green Jacket for Men",
     price: "₹4500",
     category: "Men's",
     imgUrl:
-      "https://www.woodlandworldwide.com/_next/image?url=https%3A%2F%2Fassets.woodlandworldwide.app%2Fcompressed%2Fimages%2FFGC015050071A%2FCAMEL%2FFGC015050071A_010_0.jpg&w=1920&q=75",
+      "https://www.woodlandworldwide.com/_next/image?url=https%3A%2F%2Fassets.woodlandworldwide.app%2Fcompressed%2Fimages%2FGGJC05004022A%2FCMFLG_GREEN%2FGGJC05004022A_B01_0.jpg&w=1920&q=75",
+  },
+  {
+    id: 44,
+    name: "Forest night mandarin collar quilted jacket for men",
+    price: "₹3500",
+    category: "Men's",
+    imgUrl:
+      "https://www.woodlandworldwide.com/_next/image?url=https%3A%2F%2Fassets.woodlandworldwide.app%2Fcompressed%2Fimages%2FGGJC05004012A%2FFOREST_NIGHT%2FGGJC05004012A_D32_0.jpg&w=1920&q=75",
   },
   {
     id: 45,
-    name: "SNAYPE hiking boots",
-    price: "₹3495",
+    name: "Black quilted jacket with hood for men",
+    price: "₹3499",
     category: "Men's",
     imgUrl:
-      "https://www.woodlandworldwide.com/_next/image?url=https%3A%2F%2Fassets.woodlandworldwide.app%2Fcompressed%2Fimages%2FFGC015037801S%2FSTEEL_GREY%2FFGC015037801S_C68_0.jpg&w=1920&q=75",
+      "https://www.woodlandworldwide.com/_next/image?url=https%3A%2F%2Fassets.woodlandworldwide.app%2Fcompressed%2Fimages%2FGGJC05004002A%2FBLACK%2FGGJC05004002A_004_0.jpg&w=1920&q=75",
   },
   ,
   {
     id: 46,
-    name: "Camel high ankle boot for men",
-    price: "₹6495",
+    name: "Blue night Corduroy Jacket for Men",
+    price: "₹4999",
     category: "Men's",
     imgUrl:
-      "https://www.woodlandworldwide.com/_next/image?url=https%3A%2F%2Fassets.woodlandworldwide.app%2Fcompressed%2Fimages%2FFGC0H9050161A%2FCAMEL%2FFGC0H9050161A_010_0.jpg&w=1920&q=75",
+      "https://www.woodlandworldwide.com/_next/image?url=https%3A%2F%2Fassets.woodlandworldwide.app%2Fcompressed%2Fimages%2FGGJC32004052A%2FBLUE_NIGHTS%2FGGJC32004052A_K24_0.jpg&w=1080&q=75",
   },
   {
     id: 47,
-    name: "Brown Boots for Mens",
-    price: "₹6500",
+    name: "Camouflage Green Jacket for Men",
+    price: "₹5500",
     category: "Men's",
     imgUrl:
-      "https://www.woodlandworldwide.com/_next/image?url=https%3A%2F%2Fassets.woodlandworldwide.app%2Fcompressed%2Fimages%2FFGC015050171A%2FBROWN%2FFGC015050171A_008_0.jpg&w=1920&q=75",
+      "https://www.woodlandworldwide.com/_next/image?url=https%3A%2F%2Fassets.woodlandworldwide.app%2Fcompressed%2Fimages%2FGGJC03003611A%2FBLACK%2FGGJC03003611A_004_0.jpg&w=1920&q=75",
   },
   {
     id: 48,
-    name: "Tan Leather Chukka Boot for Men",
-    price: "₹5000",
+    name: "Powder blue PU coated quilted jacket for men",
+    price: "₹4299",
     category: "Men's",
     imgUrl:
-      "https://www.woodlandworldwide.com/_next/image?url=https%3A%2F%2Fassets.woodlandworldwide.app%2Fcompressed%2Fimages%2FFGF0C3046372A%2FTAN%2FFGF0C3046372A_041_0.jpg&w=1080&q=75",
+      "https://www.woodlandworldwide.com/_next/image?url=https%3A%2F%2Fassets.woodlandworldwide.app%2Fcompressed%2Fimages%2FGGJC05003922A%2FPOWDER_BLUE%2FGGJC05003922A_C40_0.jpg&w=1920&q=75",
   },
   {
     id: 49,
@@ -467,67 +469,67 @@ const Categories = [
   },
   {
     id: 61,
-    name: "maroon Canvas shoes for women",
+    name: "Rust Quilted Jacket for Women",
     price: "price:₹2000",
     category: "Women's",
     imgUrl:
-      "https://www.woodlandworldwide.com/_next/image?url=https%3A%2F%2Fassets.woodlandworldwide.app%2Fcompressed%2Fimages%2FFLC0310S2602A%2FBROWN_MAROON%2FFLC0310S2602A_I50_0.jpg&w=1920&q=75",
+      "https://www.woodlandworldwide.com/_next/image?url=https%3A%2F%2Fassets.woodlandworldwide.app%2Fcompressed%2Fimages%2FGLJC05002422A%2FRUST%2FGLJC05002422A_035_0.jpg&w=1920&q=75",
   },
   {
     id: 62,
-    name: "Lgrey sneaker for women",
+    name: "Purple PU coated puffer Jacket",
     price: "price:₹4000",
     category: "Women's",
     imgUrl:
-      "https://www.woodlandworldwide.com/_next/image?url=https%3A%2F%2Fassets.woodlandworldwide.app%2Fcompressed%2Fimages%2FFLC015044221A%2FLGREY%2FFLC015044221A_024_0.jpg&w=1920&q=75",
+      "https://www.woodlandworldwide.com/_next/image?url=https%3A%2F%2Fassets.woodlandworldwide.app%2Fcompressed%2Fimages%2FGLJC03002302A%2FPURPLE%2FGLJC03002302A_119_0.jpg&w=1920&q=75",
   },
   {
     id: 63,
-    name: "Variglia Sneakers for Women",
+    name: "Feather Grey quilted jacket for women",
     price: "price:₹3000",
     category: "Women's",
     imgUrl:
-      "https://www.woodlandworldwide.com/_next/image?url=https%3A%2F%2Fassets.woodlandworldwide.app%2Fcompressed%2Fimages%2FFLC051044211A%2FVARIGLIA%2FFLC051044211A_F85_0.jpg&w=1920&q=75",
+      "https://www.woodlandworldwide.com/_next/image?url=https%3A%2F%2Fassets.woodlandworldwide.app%2Fcompressed%2Fimages%2FGLJC57002432A%2FFEATHER_GREY%2FGLJC57002432A_K40_0.jpg&w=1920&q=75",
   },
   {
     id: 64,
-    name: "White Sneakers for women",
+    name: "Wine Hooded Jacket for Women",
     price: "price:₹2200",
     category: "Women's",
     imgUrl:
-      "https://www.woodlandworldwide.com/_next/image?url=https%3A%2F%2Fassets.woodlandworldwide.app%2Fcompressed%2Fimages%2FFLC0260S2522A%2FWHITE%2FFLC0260S2522A_044_0.jpg&w=1920&q=75",
+      "https://www.woodlandworldwide.com/_next/image?url=https%3A%2F%2Fassets.woodlandworldwide.app%2Fcompressed%2Fimages%2FGLJC57002402A%2FWINE%2FGLJC57002402A_045_0.jpg&w=1920&q=75",
   },
   {
     id: 65,
-    name: "Black Canvas shoes for women",
+    name: "Green quilted jacket with detachable hood for women",
     price: "price:₹2000",
     category: "Women's",
     imgUrl:
-      "https://www.woodlandworldwide.com/_next/image?url=https%3A%2F%2Fassets.woodlandworldwide.app%2Fcompressed%2Fimages%2FFLC0310S2532A%2FBLACK%2FFLC0310S2532A_004_0.jpg&w=1920&q=75",
+      "https://www.woodlandworldwide.com/_next/image?url=https%3A%2F%2Fassets.woodlandworldwide.app%2Fcompressed%2Fimages%2FGLJC03002222A%2FGREEN%2FGLJC03002222A_020_0.jpg&w=1080&q=75",
   },
   {
     id: 66,
-    name: "Desert Rose sneaker for women",
-    price: "price:₹2500",
+    name: "Chili Red PU coated quilted jacket for Women",
+    price: "price:₹3500",
     category: "Women's",
     imgUrl:
-      "https://www.woodlandworldwide.com/_next/image?url=https%3A%2F%2Fassets.woodlandworldwide.app%2Fcompressed%2Fimages%2FFLC0AX032671A%2FDESERT_ROSE%2FFLC0AX032671A_D02_0.jpg&w=1920&q=75",
+      "https://www.woodlandworldwide.com/_next/image?url=https%3A%2F%2Fassets.woodlandworldwide.app%2Fcompressed%2Fimages%2FGLJC05002282A%2FCHILI_RED%2FGLJC05002282A_I12_0.jpg&w=1080&q=75",
   },
   {
     id: 67,
-    name: "White Fabric Ladies Luxury Sports Shoes",
-    price: "price:₹3000",
+    name: "Charcoal Grey Quilted down Jacket for Women",
+    price: "price:₹5000",
     category: "Women's",
     imgUrl:
-      "https://www.woodlandworldwide.com/_next/image?url=https%3A%2F%2Fassets.woodlandworldwide.app%2Fcompressed%2Fimages%2FFLC0H40S9652A%2FWHITE%2FFLC0H40S9652A_044_0.jpg&w=1920&q=75",
+      "https://www.woodlandworldwide.com/_next/image?url=https%3A%2F%2Fassets.woodlandworldwide.app%2Fcompressed%2Fimages%2FGLJC05002322A%2FCHARCOAL_GREY%2FGLJC05002322A_738_0.jpg&w=1080&q=75",
   },
   {
     id: 68,
-    name: "Blue Sneaker for women",
-    price: "price:₹3400",
+    name: "Snow white quilted jacket",
+    price: "price:₹5499",
     category: "Women's",
     imgUrl:
-      "https://www.woodlandworldwide.com/_next/image?url=https%3A%2F%2Fassets.woodlandworldwide.app%2Fcompressed%2Fimages%2FFLC0H40S7612A%2FBLUE%2FFLC0H40S7612A_005_0.jpg&w=1920&q=75",
+      "https://www.woodlandworldwide.com/_next/image?url=https%3A%2F%2Fassets.woodlandworldwide.app%2Fcompressed%2Fimages%2FGLJC03002292A%2FWHITE%2FGLJC03002292A_044_0.jpg&w=1920&q=75",
   },
 ];
 export default Categories;

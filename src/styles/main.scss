@@ -55,7 +55,8 @@ nav {
   }
   .search-container {
     display: flex;
-    margin-top: 12px;
+    margin-top: 9px;
+    margin-right: 2rem;
     position: relative;
     width: 50px;
     input[type="text"] {
@@ -303,6 +304,9 @@ nav {
   .sectionname {
     font-size: 1.5rem;
     font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: rgba(13, 85, 42, 0.8);
   }
   .categoryname {
@@ -407,13 +411,19 @@ nav {
 .footer-section {
   text-align: left;
   margin-top: 35px;
+  display: flex;
+  flex-direction: column;
+  .headfilters {
+    margin-left: 1.4rem;
+  }
   .followlink {
     display: flex;
     gap: 1rem;
   }
   h4 {
     font-size: 1.2rem;
-    margin-bottom: 10px;
+    margin-bottom: 3px;
+    margin-right: 2rem;
   }
 
   p {
@@ -429,20 +439,39 @@ nav {
 
   form {
     display: flex;
+    flex-direction: column;
     margin-top: 10px;
 
     input {
-      padding: 5px;
-      flex: 1;
+      display: flex;
+
+      align-items: center;
+      margin-top: 2rem;
+      //padding: 5px;
+      height: 2rem;
+      width: 20rem;
+      margin-right: 10rem;
+      border: none;
+      //margin-bottom: 2rem;
     }
 
     button {
+      position: absolute;
       padding: 5px 10px;
       background-color: #082c09;
       color: #fff;
+      width: 5rem;
+      margin-top: 2.3rem;
+      margin-left: 17rem;
+      height: 1.5rem;
+      text-align: center;
+      margin-right: 10rem;
       border: none;
       cursor: pointer;
     }
+  }
+  .footpara {
+    margin-top: 2rem;
   }
 }
 //datastyles
@@ -596,5 +625,218 @@ nav {
         }
       }
     }
+  }
+}
+.imagemenshoe {
+  max-width: 100%;
+  height: auto;
+  margin-right: 10px;
+}
+.pricemenshoe {
+  color: black;
+  font-size: 17px;
+  font-weight: 200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.namemenshoe {
+  color: #1e201e;
+  font-size: 16px;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menpic {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //height: 100vh;
+  margin: 0;
+  background-color: #afa7a7;
+}
+.menimgsub {
+  font-size: 30px;
+  font-weight: 550;
+  display: block;
+  color: rgb(11, 112, 11);
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 0.5rem;
+  margin-left: 5rem;
+  gap: 4rem;
+  .menpicpara {
+    font-size: 16px;
+    margin-top: 0.5rem;
+    font-weight: 200;
+    color: black;
+  }
+}
+
+// CategoryPage.scss
+
+.menshoespic {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); // Display four images in one column
+  gap: 30px;
+  width: 90rem;
+  margin-left: 4rem;
+  margin-right: 4rem;
+  margin-bottom: 3rem;
+  //background-color: #e4dede;
+  //background-color: #ccc;
+}
+
+.productmenshoepic {
+  display: flex;
+  flex-direction: column;
+  border: 20px solid white;
+  gap: 3;
+  border-radius: 10px;
+  box-shadow: 0 9px 9px rgba(0, 0, 0, 0.1);
+  border: 20px solid white;
+  text-align: center;
+  width: 20rem;
+  height: auto;
+
+  margin-top: 30px;
+}
+
+.imagemenshoepic {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  margin-right: 10px;
+}
+
+.detailspic {
+  border-radius: 3px solid;
+
+  .namemenshoepic {
+    font-size: 16px;
+    font-weight: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #1e201e;
+  }
+
+  .pricemenshoepic {
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #1e201e;
+    font-weight: 100;
+  }
+}
+
+.quantity-controlspic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 2rem;
+
+  .quantity-btnpic {
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 8px;
+    background-color: rgb(14, 102, 64);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+  }
+
+  .quantitypic {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 2px;
+    margin-right: 0.5rem;
+    color: #1e201e;
+  }
+}
+
+.total-pricepic {
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.cartbtnspic {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.add-to-cart-btnpic,
+.buy-now-btnpic {
+  background-color: #0f451a;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.buy-now-btnpic:hover,
+.add-to-cart-btnpic:hover {
+  background-color: #45a049;
+}
+.imagemenshoe {
+  max-width: 100%;
+  height: auto;
+  margin-right: 10px;
+}
+
+.pricemenshoe {
+  color: black;
+  font-size: 17px;
+  font-weight: 200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.namemenshoe {
+  color: #1e201e;
+  font-size: 16px;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menpic {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  background-color: #afa7a7;
+}
+
+.menimgsub {
+  font-size: 30px;
+  font-weight: 550;
+  display: block;
+  color: rgb(11, 112, 11);
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 0.5rem;
+  margin-left: 5rem;
+  gap: 4rem;
+
+  .menpicpara {
+    font-size: 16px;
+    margin-top: 0.5rem;
+    font-weight: 200;
+    color: black;
   }
 }
