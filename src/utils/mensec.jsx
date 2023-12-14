@@ -1,14 +1,12 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Men from "../constants/mens";
-//import Addcart from "../components/cartitem";
-//import { useCart } from "../components/cartcontext";
-import { useState } from "react";
 const MenShoes = ({ AddToCart }) => {
+  let Navigate = useNavigate();
   const ItemShop = (props) => {
-    //const itemInCart = cart.find((cartItem) => cartItem.id === props.id);
     const handleAddToCart = () => {
       console.log("Add to Cart clicked for:2", props.name);
-      AddToCart(props); // Log relevant information or use debugger here
+      AddToCart(props);
+      Navigate("/cartbag"); // Log relevant information or use debugger here
     };
     const handleBuyNow = () => {
       // Implement the logic for the "Buy Now" action
@@ -26,13 +24,9 @@ const MenShoes = ({ AddToCart }) => {
             <span className="pricemenshoe">{props.price}</span>
             <p className="sizemenshoe">{props.size}</p>
             <div className="cartbtns">
-              <Link
-                to="/cartbtns"
-                onClick={handleAddToCart}
-                className="add-to-cart-btn"
-              >
+              <button onClick={handleAddToCart} className="add-to-cart-btn">
                 Add to Cart
-              </Link>
+              </button>
 
               <button onClick={handleBuyNow} className="buy-now-btn">
                 Buy Now

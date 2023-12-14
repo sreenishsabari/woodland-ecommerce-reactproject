@@ -1,13 +1,21 @@
 //import React, { useState } from "react";
 import ApparelSection from "../constants/menapparel";
+import { useNavigate } from "react-router-dom";
 
-const MenWomenApparelPage = ({ category }) => {
+const MenWomenApparelPage = ({ category, AddToCart }) => {
+  let Navigate = useNavigate();
   const filteredProducts = ApparelSection.filter(
     (curData) =>
       curData.category &&
       curData.category.toUpperCase() === category.toUpperCase()
   );
   console.log(filteredProducts);
+
+  const handleAddToCart = (values) => {
+    console.log("Add to Cart clicked for:4", values.name);
+    AddToCart(values);
+    Navigate("/cartbag"); // Log relevant information or use debugger here
+  };
   const handleBuyNow = (productName) => {
     // Implement the logic for the "Buy Now" action
     // This function will depend on how you want to handle the buy now functionality
@@ -53,7 +61,7 @@ const MenWomenApparelPage = ({ category }) => {
           <div className="productmenshoepic" key={values.id}>
             <img
               className="imagemenshoepic"
-              src={values.imgUrl}
+              src={values.image}
               alt={values.name}
             />
             <div className="detailspic">
@@ -61,7 +69,12 @@ const MenWomenApparelPage = ({ category }) => {
               <span className="pricemenshoepic">{values.price}</span>
 
               <div className="cartbtnspic">
-                <button className="add-to-cart-btnpic">Add to Cart</button>
+                <button
+                  className="add-to-cart-btnpic"
+                  onClick={() => handleAddToCart(values)}
+                >
+                  Add to Cart
+                </button>
                 <button
                   onClick={() => handleBuyNow(values.name)}
                   className="buy-now-btnpic"

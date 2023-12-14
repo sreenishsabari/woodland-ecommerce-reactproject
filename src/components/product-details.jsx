@@ -1,51 +1,23 @@
-import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Categories from "../constants";
 
-const CategoryPage = ({ category }) => {
-  const [cart, setCart] = useState([]);
-  const [quantity, setQuantity] = useState(0);
+const CategoryPage = ({ category, AddToCart }) => {
+  let Navigate = useNavigate();
   const filteredProducts = Categories.filter(
     (curData) =>
       curData.category &&
       curData.category.toUpperCase() === category.toUpperCase()
   );
-
-  const addToCart = (product) => {
-    const updatedCart = [...cart];
-    const existingItem = updatedCart.find((item) => item.id === product.id);
-
-    if (existingItem) {
-      existingItem.quantity += 1;
-    } else {
-      const newItem = { ...product, quantity: 1 };
-      updatedCart.push(newItem);
-    }
-
-    setCart(updatedCart);
-    setQuantity(quantity + 1);
+  const handleAddToCart = (values) => {
+    console.log("Add to Cart clicked for:4", values.name);
+    AddToCart(values);
+    Navigate("/cartbag"); // Log relevant information or use debugger here
   };
 
   const handleBuyNow = (productName) => {
     // Implement the logic for the "Buy Now" action
     // This function will depend on how you want to handle the buy now functionality
     console.log("Buy Now clicked for:", productName);
-  };
-
-  const handleQuantityChange = (action, productId) => {
-    const updatedCart = [...cart];
-    const index = updatedCart.findIndex((item) => item.id === productId);
-
-    if (index !== -1) {
-      if (action === "add") {
-        updatedCart[index].quantity += 1;
-        setQuantity(quantity + 1);
-      } else if (action === "remove" && updatedCart[index].quantity > 0) {
-        updatedCart[index].quantity -= 1;
-        setQuantity(quantity - 1);
-      }
-    }
-
-    setCart(updatedCart);
   };
 
   return (
@@ -144,37 +116,15 @@ const CategoryPage = ({ category }) => {
           <div className="productmenshoepic" key={values.id}>
             <img
               className="imagemenshoepic"
-              src={values.imgUrl}
+              src={values.image}
               alt={values.name}
             />
             <div className="detailspic">
               <h2 className="namemenshoepic">{values.name}</h2>
-              <span className="pricemenshoepic">{values.price}</span>
-              <div className="quantity-controlspic">
-                <button
-                  onClick={() => handleQuantityChange("remove", values.id)}
-                  className="quantity-btnpic"
-                >
-                  -
-                </button>
-                <span className="quantitypic">
-                  {cart.find((item) => item.id === values.id)?.quantity || 0}
-                </span>
-                <button
-                  onClick={() => handleQuantityChange("add", values.id)}
-                  className="quantity-btnpic"
-                >
-                  +
-                </button>
-              </div>
-              <p className="total-pricepic">
-                Total Price: $
-                {(cart.find((item) => item.id === values.id)?.quantity || 0) *
-                  values.price}
-              </p>
+              <span className="pricemenshoepic">Price:₹{values.price}</span>
               <div className="cartbtnspic">
                 <button
-                  onClick={() => addToCart(values)}
+                  onClick={() => handleAddToCart(values)}
                   className="add-to-cart-btnpic"
                 >
                   Add to Cart

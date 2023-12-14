@@ -42,6 +42,30 @@ nav {
       font-size: 1.5rem;
       font-weight: 700;
     }
+    .cartbtn {
+      display: flex;
+      justify-content: flex-start;
+      position: relative;
+      width: 3rem;
+      // height: rem;
+
+      .cartcount {
+        background-color: #1d6920;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        color: white;
+        font-size: 18px;
+        font-weight: 200;
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-left: 1rem;
+        bottom: 1rem;
+        // margin-bottom: 2rem;
+        border-radius: 40px;
+      }
+    }
     .loginbt {
       display: flex;
       gap: 0.4rem;

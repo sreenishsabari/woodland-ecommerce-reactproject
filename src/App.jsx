@@ -44,7 +44,7 @@ const App = () => {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Root />,
+      element: <Root cart={cart} />,
       errorElement: <ErrorPage />,
 
       children: [
@@ -79,80 +79,89 @@ const App = () => {
         },
         {
           path: "/bestseller",
-          element: <CategoryPage category={"Bestseller"} />,
+          element: <CategoryPage category={"Bestseller"} AddToCart={AddCart} />,
         },
 
         {
           path: "/sneaker",
-          element: <CategoryPage category={"Sneakers"} />,
+          element: <CategoryPage category={"Sneakers"} AddToCart={AddCart} />,
         },
 
         {
           path: "/casuals",
-          element: <CategoryPage category={"Boots"} />,
+          element: <CategoryPage category={"Boots"} AddToCart={AddCart} />,
         },
         {
           path: "/boot",
-          element: <CategoryPage category={"casuals"} />,
+          element: <CategoryPage category={"casuals"} AddToCart={AddCart} />,
         },
         {
           path: "/menbtn",
-          element: <CategoryPage category={"Men's"} />,
-        },
-        {
-          path: "/t-shirt",
-          element: <MenWomenApparelPage category={"Menapparel"} />,
+          element: <CategoryPage category={"Men's"} AddToCart={AddCart} />,
         },
         {
           path: "/womenbtn",
-          element: <CategoryPage category={"Women's"} />,
+          element: <CategoryPage category={"Women's"} AddToCart={AddCart} />,
+        },
+        {
+          path: "/t-shirt",
+          element: (
+            <MenWomenApparelPage category={"Menapparel"} AddToCart={AddCart} />
+          ),
         },
         {
           path: "/menapparel",
-          element: <MenWomenApparelPage category={"Menapparel"} />,
+          element: (
+            <MenWomenApparelPage category={"Menapparel"} AddToCart={AddCart} />
+          ),
         },
         {
           path: "/womenapparel",
-          element: <MenWomenApparelPage category={"Womenapparel"} />,
+          element: (
+            <MenWomenApparelPage
+              category={"Womenapparel"}
+              AddToCart={AddCart}
+            />
+          ),
         },
 
         {
           path: "/women",
-          element: <Women />,
+          element: <Women AddToCart={AddCart} />,
         },
         {
           path: "/kids",
-          element: <Kids />,
+          element: <Kids AddToCart={AddCart} />,
         },
         {
           path: "/bags&gear",
-          element: <Bags />,
+          element: <Bags AddToCart={AddCart} />,
         },
         {
           path: "/bagbtn",
-          element: <Bags />,
+          element: <Bags AddToCart={AddCart} />,
         },
         {
           path: "/beltsbtn",
-          element: <Belts />,
+          element: <Belts AddToCart={AddCart} />,
         },
         {
           path: "/boxerbtn",
-          element: <Boxers />,
+          element: <Boxers AddToCart={AddCart} />,
         },
         {
           path: "/outdoor",
-          element: <Boots />,
+          element: <Boots AddToCart={AddCart} />,
         },
 
         {
           path: "/shop1",
-          element: <MenSec />,
+          element: <MenSec AddToCart={AddCart} />,
         },
 
         {
           path: "/shop3",
-          element: <Sneaker />,
+          element: <Sneaker AddToCart={AddCart} />,
         },
       ],
     },

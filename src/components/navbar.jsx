@@ -6,8 +6,7 @@ import { FiShoppingBag } from "react-icons/fi";
 import { NavLink } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import Category from "./categories";
-import { useState } from "react";
-const Navbar = () => {
+const Navbar = ({ cart }) => {
   const location = useLocation();
   const hideSearchAndLoginRoutes = ["/cartbag"];
   const hideSearchForlogin = ["/contact"];
@@ -21,6 +20,8 @@ const Navbar = () => {
     location.pathname.includes(route)
   );
   //searchlogic
+
+  console.log(cart);
 
   return (
     <nav>
@@ -66,13 +67,12 @@ const Navbar = () => {
           </li>
 
           <li>
-            {!isHiddenRoute && (
-              <>
-                <NavLink to="/cartbag" className="cartbtn">
-                  <FiShoppingBag />
-                </NavLink>
-              </>
-            )}
+            <>
+              <NavLink to="/cartbag" className="cartbtn">
+                <FiShoppingBag />
+                <div className="cartcount">{cart.length}</div>
+              </NavLink>
+            </>
           </li>
 
           <li>

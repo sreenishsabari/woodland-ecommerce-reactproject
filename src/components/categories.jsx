@@ -27,7 +27,7 @@ const Category = () => {
           <img src="./src/images/pic9.jpg" alt="categorypic3" />
           <div className="womencategory">
             <span className="womenpara">Shop Women’s Apparel</span>
-            <Link to="womenapparel" className="womenbtn">
+            <Link to="/womenapparel" className="womenbtn">
               SHOP NOW
             </Link>
           </div>

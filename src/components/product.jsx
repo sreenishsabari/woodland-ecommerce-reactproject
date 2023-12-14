@@ -98,7 +98,7 @@ const Products = () => {
         <img src="./src/images/pic5.jpg" alt="productpic5" />
         <div className="headingbtn-container">
           <span className="sectionname">Men's</span>
-          <Link to="menbtn" className="btnname2">
+          <Link to="/menbtn" className="btnname2">
             SHOP NOW
           </Link>
         </div>
