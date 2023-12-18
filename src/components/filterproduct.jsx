@@ -1,4 +1,3 @@
-// Example component to display filtered products
 import React from "react";
 
 const FilteredProductsDisplay = ({ filteredProducts }) => {

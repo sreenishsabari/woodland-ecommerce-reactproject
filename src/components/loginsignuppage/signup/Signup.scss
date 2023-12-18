@@ -1,5 +1,5 @@
 .signup-container {
-  background-image: url(../../../images/signuppic.jpg);
+  background-image: url(../../../images/signup.jpg);
   border: 7px solid white;
   position: relative;
   margin-left: 20rem;
@@ -14,19 +14,21 @@
 h2,
 span {
   display: flex;
-  color: #fff;
+  color: #000000;
   margin-left: 1.2rem;
 }
-
 form {
   display: flex;
   position: absolute;
   flex-direction: column;
+  margin-left: 16.5rem;
+  box-shadow: 0 10px 10px 10px rgba(91, 47, 47, 0.1);
   //border: 5px solid white;
   background-color: #fff;
   border-radius: 20px;
   background: transparent;
   //max-width: 300px;
+
   width: 20rem;
   //margin: 0 auto;
   label {
@@ -42,6 +44,7 @@ form {
     padding: 10px;
     margin-bottom: 15px;
     margin-left: 2rem;
+    border: none;
     border-radius: 7px;
   }
   //onclick

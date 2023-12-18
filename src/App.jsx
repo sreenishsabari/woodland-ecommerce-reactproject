@@ -1,21 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { useState } from "react";
+import Categories from "./constants/index";
+import Filter from "./components/filter";
 import {
   Root,
   Home,
   Login,
   MenSec,
-  Sneaker,
   ErrorPage,
   SignUp,
   Bags,
   Belts,
-  Boots,
   Boxers,
-  Casuals,
   MenWomenApparelPage,
   Addcart,
+  Wishlist,
   Kids,
   Women,
   CategoryPage,
@@ -23,6 +23,8 @@ import {
 
 const App = () => {
   const [cart, setCart] = useState([]);
+  const [wishlist, setWishlist] = useState([]);
+
   const [filterProducts, setFilterProducts] = useState([]);
 
   const AddCart = (item) => {
@@ -41,10 +43,45 @@ const App = () => {
     }
   };
 
+  const AddWishlist = (item) => {
+    const existingItem = wishlist.find(
+      (wishlistItem) => wishlistItem.id === item.id
+    );
+
+    if (existingItem) {
+      console.log(`${item.name} is already in the wishlist.`);
+      // Optionally, you can show a message to the user or take other actions for duplicates.
+    } else {
+      setWishlist([...wishlist, { ...item }]);
+      console.log(`${item.name} added to the wishlist.`);
+    }
+  };
+
+  //searchfinder
+  const getData = () => {
+    const filter = Categories.filter((product) => product);
+    setFilterProducts(filter);
+  };
+
+  // console.log(Filter);
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  console.log(filterProducts);
+
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Root cart={cart} />,
+      element: (
+        <Root
+          cart={cart}
+          wishlist={wishlist}
+          filterProducts={filterProducts}
+          handlerFilter={setFilterProducts}
+        />
+      ),
       errorElement: <ErrorPage />,
 
       children: [
@@ -61,17 +98,19 @@ const App = () => {
           path: "/cartbag",
           element: <Addcart cart={cart} setCart={setCart} />,
         },
+
         {
-          path: "/cartbtns",
-          element: <Addcart cart={cart} setCart={setCart} />,
+          path: "/wishlistheart",
+          element: <Wishlist wishlist={wishlist} setWishlist={setWishlist} />,
         },
+
         {
           path: "/contact",
           element: <Login />,
         },
         {
           path: "/men",
-          element: <MenSec AddToCart={AddCart} />,
+          element: <MenSec AddToCart={AddCart} AddToWishlist={AddWishlist} />,
         },
         {
           path: "/newacbtn",
@@ -79,40 +118,84 @@ const App = () => {
         },
         {
           path: "/bestseller",
-          element: <CategoryPage category={"Bestseller"} AddToCart={AddCart} />,
+          element: (
+            <CategoryPage
+              category={"Bestseller"}
+              AddToCart={AddCart}
+              AddToWishlist={AddWishlist}
+            />
+          ),
         },
 
         {
           path: "/sneaker",
-          element: <CategoryPage category={"Sneakers"} AddToCart={AddCart} />,
+          element: (
+            <CategoryPage
+              category={"Sneakers"}
+              AddToCart={AddCart}
+              AddToWishlist={AddWishlist}
+            />
+          ),
         },
 
         {
           path: "/casuals",
-          element: <CategoryPage category={"Boots"} AddToCart={AddCart} />,
+          element: (
+            <CategoryPage
+              category={"casuals"}
+              AddToCart={AddCart}
+              AddToWishlist={AddWishlist}
+            />
+          ),
         },
         {
           path: "/boot",
-          element: <CategoryPage category={"casuals"} AddToCart={AddCart} />,
+          element: (
+            <CategoryPage
+              category={"Boots"}
+              AddToCart={AddCart}
+              AddToWishlist={AddWishlist}
+            />
+          ),
         },
         {
           path: "/menbtn",
-          element: <CategoryPage category={"Men's"} AddToCart={AddCart} />,
+          element: (
+            <CategoryPage
+              category={"Men's"}
+              AddToCart={AddCart}
+              AddToWishlist={AddWishlist}
+            />
+          ),
         },
         {
           path: "/womenbtn",
-          element: <CategoryPage category={"Women's"} AddToCart={AddCart} />,
+          element: (
+            <CategoryPage
+              category={"Women's"}
+              AddToCart={AddCart}
+              AddToWishlist={AddWishlist}
+            />
+          ),
         },
         {
           path: "/t-shirt",
           element: (
-            <MenWomenApparelPage category={"Menapparel"} AddToCart={AddCart} />
+            <MenWomenApparelPage
+              category={"Menapparel"}
+              AddToCart={AddCart}
+              AddToWishlist={AddWishlist}
+            />
           ),
         },
         {
           path: "/menapparel",
           element: (
-            <MenWomenApparelPage category={"Menapparel"} AddToCart={AddCart} />
+            <MenWomenApparelPage
+              category={"Menapparel"}
+              AddToCart={AddCart}
+              AddToWishlist={AddWishlist}
+            />
           ),
         },
         {
@@ -121,47 +204,104 @@ const App = () => {
             <MenWomenApparelPage
               category={"Womenapparel"}
               AddToCart={AddCart}
+              AddToWishlist={AddWishlist}
+            />
+          ),
+        },
+        {
+          path: "/filter",
+          element: (
+            <Filter
+              filterProducts={filterProducts}
+              Categories={Categories}
+              AddToCart={AddCart}
+              AddToWishlist={AddWishlist}
+            />
+          ),
+        },
+        {
+          path: "/women",
+          element: <Women AddToCart={AddCart} AddToWishlist={AddWishlist} />,
+        },
+        {
+          path: "/kids",
+          element: <Kids AddToCart={AddCart} AddToWishlist={AddWishlist} />,
+        },
+        {
+          path: "/bags&gear",
+          element: (
+            <CategoryPage
+              category={"Bag"}
+              AddToCart={AddCart}
+              AddToWishlist={AddWishlist}
+            />
+          ),
+        },
+        {
+          path: "/bagbtn",
+          //element: <Bags AddToCart={AddCart} AddToWishlist={AddWishlist} />,
+          element: (
+            <CategoryPage
+              category={"Bag"}
+              AddToCart={AddCart}
+              AddToWishlist={AddWishlist}
+            />
+          ),
+        },
+        {
+          path: "/beltsbtn",
+          element: (
+            <CategoryPage
+              category={"Belt"}
+              AddToCart={AddCart}
+              AddToWishlist={AddWishlist}
+            />
+          ),
+        },
+        {
+          path: "/boxerbtn",
+          //element: <Boxers AddToCart={AddCart} AddToWishlist={AddWishlist} />,
+          element: (
+            <CategoryPage
+              category={"Boxer"}
+              AddToCart={AddCart}
+              AddToWishlist={AddWishlist}
+            />
+          ),
+        },
+        {
+          path: "/outdoor",
+          element: (
+            <MenWomenApparelPage
+              category={"Outdoor"}
+              AddToCart={AddCart}
+              AddToWishlist={AddWishlist}
             />
           ),
         },
 
         {
-          path: "/women",
-          element: <Women AddToCart={AddCart} />,
-        },
-        {
-          path: "/kids",
-          element: <Kids AddToCart={AddCart} />,
-        },
-        {
-          path: "/bags&gear",
-          element: <Bags AddToCart={AddCart} />,
-        },
-        {
-          path: "/bagbtn",
-          element: <Bags AddToCart={AddCart} />,
-        },
-        {
-          path: "/beltsbtn",
-          element: <Belts AddToCart={AddCart} />,
-        },
-        {
-          path: "/boxerbtn",
-          element: <Boxers AddToCart={AddCart} />,
-        },
-        {
-          path: "/outdoor",
-          element: <Boots AddToCart={AddCart} />,
-        },
-
-        {
           path: "/shop1",
-          element: <MenSec AddToCart={AddCart} />,
+          element: <MenSec AddToCart={AddCart} AddToWishlist={AddWishlist} />,
         },
 
+        {
+          path: "/shop2",
+          element: <Boxers AddToCart={AddCart} AddToWishlist={AddWishlist} />,
+        },
         {
           path: "/shop3",
-          element: <Sneaker AddToCart={AddCart} />,
+          element: (
+            <CategoryPage
+              category={"Sneakers"}
+              AddToCart={AddCart}
+              AddToWishlist={AddWishlist}
+            />
+          ),
+        },
+        {
+          path: "/explore",
+          element: <MenSec AddToCart={AddCart} AddToWishlist={AddWishlist} />,
         },
       ],
     },

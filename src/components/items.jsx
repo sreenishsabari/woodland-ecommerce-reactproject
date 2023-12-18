@@ -13,9 +13,9 @@ const Items = () => {
           </div>
         </div>
         <div className="categorysecbtn">
-          <img src="./src/images/pic16.jpg" alt="categorypic9" />
+          <img src="./src/images/shorts.jpg" alt="categorypic9" />
           <div className="categorysecname">
-            <span className="categoryheading">Boxers</span>
+            <span className="categoryheading">Shorts</span>
             <Link to="/boxerbtn" className="categorybtn">
               SHOP NOW
             </Link>
@@ -34,7 +34,9 @@ const Items = () => {
       <div className="btnimgbanner">
         <img src="./src/images/pic14.jpg" alt="banner" className="banner" />
         <div className="imagebanner">
-          <button className="btnbanner">EXPLORE NOW</button>
+          <Link to="/explore" className="btnbanner">
+            EXPLORE NOW
+          </Link>
         </div>
       </div>
     </div>

@@ -7,7 +7,7 @@ import {
   signOutUser,
 } from "../../../utils/firebase";
 import { useUser } from "../../../components/context";
-console.log(useUser);
+// console.log(useUser);
 // const defaultFormFields = {
 //   userName: "",
 //   email: "",

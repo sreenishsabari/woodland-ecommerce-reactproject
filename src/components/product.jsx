@@ -55,7 +55,7 @@ export default Products;*/
 import { Link } from "react-router-dom";
 import Categories from "../constants";
 const Products = () => {
-  console.log(Categories);
+  // console.log(Categories);
   return (
     <div className="productimage-container">
       <div className="sectionbtn-container">

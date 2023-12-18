@@ -1,18 +1,22 @@
 import { useNavigate } from "react-router-dom";
+
+import { useState } from "react";
 import Men from "../constants/mens";
-const MenShoes = ({ AddToCart }) => {
+import { FaHeart } from "react-icons/fa6";
+const MenShoes = ({ AddToCart, AddToWishlist }) => {
   let Navigate = useNavigate();
   const ItemShop = (props) => {
+    const [isClicked, setIsClicked] = useState(false);
     const handleAddToCart = () => {
       console.log("Add to Cart clicked for:2", props.name);
       AddToCart(props);
       Navigate("/cartbag"); // Log relevant information or use debugger here
     };
-    const handleBuyNow = () => {
-      // Implement the logic for the "Buy Now" action
-      // This function will depend on how you want to handle the buy now functionality
-      // For example, you might want to redirect to a checkout page or show a modal
-      console.log("Buy Now clicked for:", props.name);
+    const handleWishlist = () => {
+      console.log("wishlist clicked for:3", props.name);
+      AddToWishlist(props);
+      setIsClicked(!isClicked);
+      //Navigate("/wishlistheart");
     };
 
     return (
@@ -21,15 +25,19 @@ const MenShoes = ({ AddToCart }) => {
           <img className="imagemenshoe" src={props.image} />
           <div className="details">
             <h2 className="namemenshoe">{props.name}</h2>
-            <span className="pricemenshoe">{props.price}</span>
+            <span className="pricemenshoe">Price:₹{props.price}</span>
             <p className="sizemenshoe">{props.size}</p>
             <div className="cartbtns">
               <button onClick={handleAddToCart} className="add-to-cart-btn">
                 Add to Cart
               </button>
 
-              <button onClick={handleBuyNow} className="buy-now-btn">
-                Buy Now
+              <button
+                onClick={handleWishlist}
+                className="buy-now-btn"
+                style={{ color: isClicked ? "red" : "black" }}
+              >
+                <FaHeart />
               </button>
             </div>
           </div>

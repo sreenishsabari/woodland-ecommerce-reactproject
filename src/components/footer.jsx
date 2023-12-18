@@ -29,22 +29,7 @@ const Footer = () => {
         <div className="footer-section">
           <h4 className="headfilters">Always keep exploring more!</h4>
           <span> Get alerts for new arrivals, offers, and more!</span>
-          <form action="/submit" method="post">
-            <input
-              type="email"
-              name="email"
-              placeholder="Your email"
-              required
-            />
-            <button type="submit">Submit</button>
-          </form>
-          <p className="footpara">
-            <span>By entering your email, you agree to our Terms of </span>
-            <span>Service & PrivacyPolicy, including receipt of emails</span>
-            <span>and promotions. You can unsubscribe at any time.</span>
-          </p>
         </div>
-
         <div className="footer-section">
           <h4>Quick Links</h4>
           <a href="/terms">Terms of Service</a>

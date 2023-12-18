@@ -1,23 +1,47 @@
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import Categories from "../constants";
-
-const CategoryPage = ({ category, AddToCart }) => {
+import { FaHeart } from "react-icons/fa6";
+import Bags from "../images/bagspic.jpg";
+import Boxers from "../images/Boxerspic.jpg";
+import Belts from "../images/belts.jpg";
+const CategoryPage = ({ category, AddToCart, AddToWishlist }) => {
   let Navigate = useNavigate();
   const filteredProducts = Categories.filter(
     (curData) =>
       curData.category &&
       curData.category.toUpperCase() === category.toUpperCase()
   );
+  const [wishlist, setWishlist] = useState([]);
+  const [isClicked, setIsClicked] = useState(filteredProducts.map(() => false));
   const handleAddToCart = (values) => {
     console.log("Add to Cart clicked for:4", values.name);
     AddToCart(values);
     Navigate("/cartbag"); // Log relevant information or use debugger here
   };
 
-  const handleBuyNow = (productName) => {
-    // Implement the logic for the "Buy Now" action
-    // This function will depend on how you want to handle the buy now functionality
-    console.log("Buy Now clicked for:", productName);
+  const handleWishlist = (values) => {
+    AddToWishlist(values);
+
+    const index = wishlist.findIndex((item) => item.id === values.id);
+
+    if (index === -1) {
+      // Product is not in the wishlist, add it
+      setWishlist([...wishlist, values]);
+    } else {
+      // Product is in the wishlist, remove it
+      const newWishlist = [...wishlist];
+      newWishlist.splice(index, 1);
+      setWishlist(newWishlist);
+    }
+
+    // Toggle the isClicked state for the clicked product
+    setIsClicked((prevIsClicked) => {
+      const newIsClicked = [...prevIsClicked];
+      newIsClicked[filteredProducts.indexOf(values)] =
+        !newIsClicked[filteredProducts.indexOf(values)];
+      return newIsClicked;
+    });
   };
 
   return (
@@ -45,7 +69,7 @@ const CategoryPage = ({ category, AddToCart }) => {
             className="menpic"
           />
           <span className="menimgsub">
-            MENS SNEAKERS
+            WOMEN'S SNEAKERS
             <p className="menpicpara">
               Stay effortless with our cool, trendy sneakers which are crafted
               bold, and unique that inspire sneakers for all ages.
@@ -57,7 +81,7 @@ const CategoryPage = ({ category, AddToCart }) => {
         <>
           <img src="./src/images/menpic.jpg" alt="menpic" className="menpic" />
           <span className="menimgsub">
-            MENS CASUALS LACE UP
+            MEN'S CASUALS LACE UP
             <p className="menpicpara">
               Our Lace-up casual shoes are made of comfortable, durable material
               and a lace-up closure provides secure and adjustable fit..
@@ -73,7 +97,7 @@ const CategoryPage = ({ category, AddToCart }) => {
             className="menpic"
           />
           <span className="menimgsub">
-            MENS BOOTS
+            MEN'S BOOTS
             <p className="menpicpara">
               Hike through the woods, or navigate urban streets, our boots are
               designed for ultimate comfort and durability.
@@ -85,7 +109,7 @@ const CategoryPage = ({ category, AddToCart }) => {
         <>
           <img src="./src/images/menimg.jpg" alt="menpic" className="menpic" />
           <span className="menimgsub">
-            MENS JACKETS FULL SLEEVE
+            MEN'S JACKETS FULL SLEEVE
             <p className="menpicpara">
               An ideal choice for outdoor enthusiasts, our full-sleeve jacket is
               made from high-quality polyester fabric, to provide excellent
@@ -94,6 +118,7 @@ const CategoryPage = ({ category, AddToCart }) => {
           </span>
         </>
       )}
+
       {category.toLowerCase() === "women's" && (
         <>
           <img
@@ -102,11 +127,50 @@ const CategoryPage = ({ category, AddToCart }) => {
             className="menpic"
           />
           <span className="menimgsub">
-            WOMENS JACKETS FULL SLEEVE
+            WOMEN'S JACKETS FULL SLEEVE
             <p className="menpicpara">
               An ideal choice for outdoor enthusiasts, our full-sleeve jacket is
               made from high-quality polyester fabric, to provide excellent
               insulation and warmth
+            </p>
+          </span>
+        </>
+      )}
+      {category.toLowerCase() === "bag" && (
+        <>
+          <img src={Bags} alt="menpic" className="menpic" />
+          <span className="menimgsub">
+            MEN'S BACKPACKS
+            <p className="menpicpara">
+              Our hiking backpacks are the perfect companion, providing
+              durability, functionality, and comfort to outdoor enthusiasts of
+              all levels.
+            </p>
+          </span>
+        </>
+      )}
+      {category.toLowerCase() === "boxer" && (
+        <>
+          <img src={Boxers} alt="menpic" className="menpic" />
+          <span className="menimgsub">
+            SHORT'S
+            <p className="menpicpara">
+              Our shorts are designed to provide a comfortable fit and come with
+              an elastic waistband, perfect for adventure-packed summer days or
+              even lounging around the pool.
+            </p>
+          </span>
+        </>
+      )}
+      {category.toLowerCase() === "belt" && (
+        <>
+          <img src={Belts} alt="menpic" className="menpic" />
+          <span className="menimgsub">
+            MEN'S BELTS
+            <p className="menpicpara">
+              Our belts are crafted with precision and care with premium leather
+              to ensure that it meets high standards of quality with a touch of
+              elegance
             </p>
           </span>
         </>
@@ -130,10 +194,15 @@ const CategoryPage = ({ category, AddToCart }) => {
                   Add to Cart
                 </button>
                 <button
-                  onClick={() => handleBuyNow(values.name)}
-                  className="buy-now-btnpic"
+                  onClick={() => handleWishlist(values)}
+                  className="heartbtn"
+                  style={{
+                    color: isClicked[filteredProducts.indexOf(values)]
+                      ? "red"
+                      : "black",
+                  }}
                 >
-                  Buy Now
+                  <FaHeart />
                 </button>
               </div>
             </div>
@@ -145,39 +214,3 @@ const CategoryPage = ({ category, AddToCart }) => {
 };
 
 export default CategoryPage;
-
-// CategoryPage.jsx
-/*import React from "react";
-//import { useParams } from "react-router-dom";
-import Categories from "../constants";
-
-console.log("Current Category:", Categories);
-
-const CategoryPage = ({ category }) => {
-  console.log("Rendering CategoryPage");
-  //const { category } = useParams();
-  console.log("Current Category:", category);
-  const filteredProducts = Categories.filter(
-    (curData) =>
-      curData.category &&
-      curData.category.toUpperCase() === category.toUpperCase()
-  );
-
-  console.log("Filtered Products:", filteredProducts);
-
-  return (
-    <div className="menshoespic">
-      {filteredProducts.map((values) => (
-        <div className="productmenshoe" key={values.id}>
-          <img className="imagemenshoe" src={values.imgUrl} alt={values.name} />
-          <div className="details">
-            <h2 className="namemenshoe">{values.name}</h2>
-            <span className="pricemenshoe">{values.price}</span>
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-};
-
-export default CategoryPage;*/

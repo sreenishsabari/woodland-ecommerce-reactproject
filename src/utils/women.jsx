@@ -1,18 +1,22 @@
 import Women from "../constants/womens";
+import { FaHeart } from "react-icons/fa6";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-const WomenShoes = ({ AddToCart }) => {
+const WomenShoes = ({ AddToCart, AddToWishlist }) => {
   const ItemShop = (props) => {
+    const [isClicked, setIsClicked] = useState(false);
     let Navigate = useNavigate();
     const handleAddToCart = () => {
       console.log("Add to Cart clicked for:2", props.name);
       AddToCart(props);
       Navigate("/cartbag"); // Log relevant information or use debugger here
     };
-    const handleBuyNow = () => {
-      // Implement the logic for the "Buy Now" action
-      // This function will depend on how you want to handle the buy now functionality
-      // For example, you might want to redirect to a checkout page or show a modal
-      console.log("Buy Now clicked for:", props.name);
+    const handleWishlist = () => {
+      console.log("wishlist clicked for:3", props.name);
+      AddToWishlist(props);
+      setIsClicked(!isClicked);
+
+      //Navigate("/wishlistheart");
     };
 
     return (
@@ -26,8 +30,12 @@ const WomenShoes = ({ AddToCart }) => {
               <button onClick={handleAddToCart} className="add-to-cart-btn">
                 Add to Cart
               </button>
-              <button onClick={handleBuyNow} className="buy-now-btn">
-                Buy Now
+              <button
+                onClick={handleWishlist}
+                className="buy-now-btn"
+                style={{ color: isClicked ? "red" : "black" }}
+              >
+                <FaHeart />
               </button>
             </div>
           </div>

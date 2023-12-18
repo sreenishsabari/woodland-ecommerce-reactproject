@@ -18,16 +18,21 @@
     margin-bottom: 15px;
 
     font-weight: 500;
-    color: #1e201e;
+
     background-color: #084c08;
     border-radius: 5px;
 
     .heading {
       display: flex;
       flex-direction: row;
-
+      color: white;
       gap: 20rem;
       font-size: 20px;
+
+      .header1,
+      .header2 {
+        color: white;
+      }
     }
   }
 

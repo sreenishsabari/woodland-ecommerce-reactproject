@@ -2,6 +2,7 @@ import Root from "./root.route";
 import Login from "../../components/loginsignuppage/login";
 //import Authentication from "../../authentication/authentication.route";
 import Addcart from "../../components/cart";
+import Wishlist from "../../components/wishlist";
 import MenSec from "../../utils/mensec";
 import Women from "../../utils/women";
 import Kids from "../../utils/kids";
@@ -34,4 +35,5 @@ export {
   CategoryPage,
   Addcart,
   MenWomenApparelPage,
+  Wishlist,
 };

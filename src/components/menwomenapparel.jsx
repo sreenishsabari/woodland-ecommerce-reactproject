@@ -56,6 +56,18 @@ const MenWomenApparelPage = ({ category, AddToCart }) => {
           </span>
         </>
       )}
+      {category.toLowerCase() === "outdoor" && (
+        <>
+          <img src="./src/images/menpic.jpg" alt="menpic" className="menpic" />
+          <span className="menimgsub">
+            MENS BOOTS
+            <p className="menpicpara">
+              Hike through the woods, or navigate urban streets, our boots are
+              designed for ultimate comfort and durability.
+            </p>
+          </span>
+        </>
+      )}
       <div className="menshoespic">
         {filteredProducts.map((values) => (
           <div className="productmenshoepic" key={values.id}>
