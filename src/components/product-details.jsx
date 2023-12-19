@@ -5,6 +5,12 @@ import { FaHeart } from "react-icons/fa6";
 import Bags from "../images/bagspic.jpg";
 import Boxers from "../images/Boxerspic.jpg";
 import Belts from "../images/belts.jpg";
+import Bestsellerpic from "../images/bestsellerpic.jpg";
+import sneakerpic from "../images/sneakerpic.jpg";
+import menpic from "../images/menpic.jpg";
+import casualpic from "../images/casualpic.jpg";
+import menimg from "../images/menimg.jpg";
+import womenimg from "../images/womenimg.jpg";
 const CategoryPage = ({ category, AddToCart, AddToWishlist }) => {
   let Navigate = useNavigate();
   const filteredProducts = Categories.filter(
@@ -48,11 +54,7 @@ const CategoryPage = ({ category, AddToCart, AddToWishlist }) => {
     <div className="headerimg">
       {category.toLowerCase() === "bestseller" && (
         <>
-          <img
-            src="./src/images/bestsellerpic.jpg"
-            alt="menpic"
-            className="menpic"
-          />
+          <img src={Bestsellerpic} alt="menpic" className="menpic" />
           <span className="menimgsub">
             BESTSELLERS
             <p className="menpicpara">
@@ -63,11 +65,7 @@ const CategoryPage = ({ category, AddToCart, AddToWishlist }) => {
       )}
       {category.toLowerCase() === "sneakers" && (
         <>
-          <img
-            src="./src/images/sneakerpic.jpg"
-            alt="menpic"
-            className="menpic"
-          />
+          <img src={sneakerpic} alt="menpic" className="menpic" />
           <span className="menimgsub">
             WOMEN'S SNEAKERS
             <p className="menpicpara">
@@ -79,7 +77,7 @@ const CategoryPage = ({ category, AddToCart, AddToWishlist }) => {
       )}
       {category.toLowerCase() === "boots" && (
         <>
-          <img src="./src/images/menpic.jpg" alt="menpic" className="menpic" />
+          <img src={menpic} alt="menpic" className="menpic" />
           <span className="menimgsub">
             MEN'S CASUALS LACE UP
             <p className="menpicpara">
@@ -91,11 +89,7 @@ const CategoryPage = ({ category, AddToCart, AddToWishlist }) => {
       )}
       {category.toLowerCase() === "casuals" && (
         <>
-          <img
-            src="./src/images/casualpic.jpg"
-            alt="menpic"
-            className="menpic"
-          />
+          <img src={casualpic} alt="menpic" className="menpic" />
           <span className="menimgsub">
             MEN'S BOOTS
             <p className="menpicpara">
@@ -107,7 +101,7 @@ const CategoryPage = ({ category, AddToCart, AddToWishlist }) => {
       )}
       {category.toLowerCase() === "men's" && (
         <>
-          <img src="./src/images/menimg.jpg" alt="menpic" className="menpic" />
+          <img src={menimg} alt="menpic" className="menpic" />
           <span className="menimgsub">
             MEN'S JACKETS FULL SLEEVE
             <p className="menpicpara">
@@ -121,11 +115,7 @@ const CategoryPage = ({ category, AddToCart, AddToWishlist }) => {
 
       {category.toLowerCase() === "women's" && (
         <>
-          <img
-            src="./src/images/womenimg.jpg"
-            alt="menpic"
-            className="menpic"
-          />
+          <img src={womenimg} alt="menpic" className="menpic" />
           <span className="menimgsub">
             WOMEN'S JACKETS FULL SLEEVE
             <p className="menpicpara">

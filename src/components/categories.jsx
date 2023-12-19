@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import pic7 from "../images/pic7.jpg";
+import pic8 from "../images/pic8.jpg";
+import pic9 from "../images/pic9.jpg";
 //import { MenApparel } from "../routes/root";
 
 const Category = () => {
@@ -15,7 +17,7 @@ const Category = () => {
       </div>
       <div className="categoryimage1-container">
         <div className="menimage">
-          <img src="./src/images/pic8.jpg" alt="categorypic2" />
+          <img src={pic8} alt="categorypic2" />
           <div className="mencategory">
             <span className="menpara">Shop Men’s Apparel</span>
             <Link to="/menapparel" className="menbtn">
@@ -24,7 +26,7 @@ const Category = () => {
           </div>
         </div>
         <div className="womenimage">
-          <img src="./src/images/pic9.jpg" alt="categorypic3" />
+          <img src={pic9} alt="categorypic3" />
           <div className="womencategory">
             <span className="womenpara">Shop Women’s Apparel</span>
             <Link to="/womenapparel" className="womenbtn">

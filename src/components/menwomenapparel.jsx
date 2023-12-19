@@ -1,6 +1,9 @@
 //import React, { useState } from "react";
 import ApparelSection from "../constants/menapparel";
 import { useNavigate } from "react-router-dom";
+import menapparelpic from "../images/menapparelpic.jpg";
+import womenapparelbg from "../images/womenapparelbg.jpg";
+import menpic from "../images/menpic.jpg";
 
 const MenWomenApparelPage = ({ category, AddToCart }) => {
   let Navigate = useNavigate();
@@ -26,11 +29,7 @@ const MenWomenApparelPage = ({ category, AddToCart }) => {
     <div className="headerimg">
       {category.toLowerCase() === "menapparel" && (
         <>
-          <img
-            src="./src/images/menapparelpic.jpg"
-            alt="menpic"
-            className="menpic"
-          />
+          <img src={menapparelpic} alt="menpic" className="menpic" />
           <span className="menimgsub">
             MENS POLO
             <p className="menpicpara">
@@ -42,11 +41,7 @@ const MenWomenApparelPage = ({ category, AddToCart }) => {
       )}
       {category.toLowerCase() === "womenapparel" && (
         <>
-          <img
-            src="./src/images/womenapparelbg.jpg"
-            alt="menpic"
-            className="menpic"
-          />
+          <img src={womenapparelbg} alt="menpic" className="menpic" />
           <span className="menimgsub">
             WOMENS POLO
             <p className="menpicpara">
@@ -58,7 +53,7 @@ const MenWomenApparelPage = ({ category, AddToCart }) => {
       )}
       {category.toLowerCase() === "outdoor" && (
         <>
-          <img src="./src/images/menpic.jpg" alt="menpic" className="menpic" />
+          <img src={menpic} alt="menpic" className="menpic" />
           <span className="menimgsub">
             MENS BOOTS
             <p className="menpicpara">

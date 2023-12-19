@@ -1,6 +1,9 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { Link } from "react-router-dom";
+import image1 from "../images/image1.jpg";
+import image2 from "../images/image2.jpg";
+import image3 from "../images/image3.jpg";
 
 const Slider = () => {
   const responsive = {
@@ -32,13 +35,13 @@ const Slider = () => {
         autoPlay={true}
       >
         <Link to="/shop1" className="sliderone">
-          <img src="./src/images/image1.jpg" alt="imageOne" />
+          <img src={image1} alt="imageOne" />
         </Link>
         <Link to="/shop2" className="slidertwo">
-          <img src="./src/images/image2.jpg" alt="imageTwo" />
+          <img src={image2} alt="imageTwo" />
         </Link>
         <Link to="/shop3" className="sliderthree">
-          <img src="./src/images/image3.jpg" alt="imageThree" />
+          <img src={image3} alt="imageThree" />
         </Link>
       </Carousel>
     </div>

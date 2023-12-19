@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import menpic from "../images/menpic.jpg";
 
 import { useState } from "react";
 import Men from "../constants/mens";
@@ -47,7 +48,7 @@ const MenShoes = ({ AddToCart, AddToWishlist }) => {
   };
   return (
     <div>
-      <img src="./src/images/menpic.jpg" alt="menpic" className="menpic" />
+      <img src={menpic} alt="menpic" className="menpic" />
       <span className="menimgsub">
         MEN'S SHOES
         <p className="menpicpara">

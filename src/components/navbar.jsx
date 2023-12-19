@@ -7,6 +7,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import Categories from "../constants";
+import Logo from "../assets/logo.png";
 
 //import Categories from "../constants";
 const Navbar = ({ filterProducts, handlerFilter, cart, wishlist }) => {
@@ -66,7 +67,7 @@ const Navbar = ({ filterProducts, handlerFilter, cart, wishlist }) => {
   return (
     <nav>
       <div>
-        <img src="./src/assets/logo.png" alt="logo" />
+        <img src={Logo} alt="logo" />
       </div>
       <ul>
         <li>

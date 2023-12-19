@@ -2,6 +2,7 @@ import Women from "../constants/womens";
 import { FaHeart } from "react-icons/fa6";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import womenpic from "../images/womenpic.jpg";
 const WomenShoes = ({ AddToCart, AddToWishlist }) => {
   const ItemShop = (props) => {
     const [isClicked, setIsClicked] = useState(false);
@@ -45,7 +46,7 @@ const WomenShoes = ({ AddToCart, AddToWishlist }) => {
   };
   return (
     <div>
-      <img src="./src/images/womenpic.jpg" alt="menpic" className="menpic" />
+      <img src={womenpic} alt="menpic" className="menpic" />
       <span className="menimgsub">
         WOMEN'S SHOES
         <p className="menpicpara">

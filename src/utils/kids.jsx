@@ -1,5 +1,6 @@
 import Kids from "../constants/kids";
 import { useNavigate } from "react-router-dom";
+import kidspic from "../images/kidspic.jpg";
 
 const KidsShoes = ({ AddToCart }) => {
   let Navigate = useNavigate();
@@ -39,7 +40,7 @@ const KidsShoes = ({ AddToCart }) => {
   };
   return (
     <div>
-      <img src="./src/images/kidspic.jpg" alt="menpic" className="menpic" />
+      <img src={kidspic} alt="menpic" className="menpic" />
       <span className="menimgsub">
         KID'S SHOES
         <p className="menpicpara">
