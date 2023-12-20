@@ -4,7 +4,7 @@ import menpic from "../images/menpic.jpg";
 import { useState } from "react";
 import Men from "../constants/mens";
 import { FaHeart } from "react-icons/fa6";
-const MenShoes = ({ AddToCart, AddToWishlist }) => {
+const MenShoes = ({ AddToCart, AddToWishlist, wishlist, setWishlist }) => {
   let Navigate = useNavigate();
   const ItemShop = (props) => {
     const [isClicked, setIsClicked] = useState(false);
@@ -18,6 +18,12 @@ const MenShoes = ({ AddToCart, AddToWishlist }) => {
       AddToWishlist(props);
       setIsClicked(!isClicked);
       //Navigate("/wishlistheart");
+    };
+    const onRemoveItem = (id) => {
+      console.log("Trying to remove item with id:", id);
+      const updatedWishlist = wishlist.filter((product) => product.id !== id);
+      setWishlist(updatedWishlist);
+      console.log("Item removed from wishlist:", id);
     };
 
     return (
@@ -34,7 +40,12 @@ const MenShoes = ({ AddToCart, AddToWishlist }) => {
               </button>
 
               <button
-                onClick={handleWishlist}
+                onClick={() => {
+                  handleWishlist();
+                  if (isClicked) {
+                    onRemoveItem(props.id);
+                  }
+                }}
                 className="buy-now-btn"
                 style={{ color: isClicked ? "red" : "black" }}
               >

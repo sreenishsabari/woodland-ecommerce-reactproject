@@ -14,7 +14,7 @@ const Products = () => {
         <img src={pic1} alt="productpic1" />
         <div className="headingbtn-container">
           <span className="sectionname">BestSellers</span>
-          <Link to="/bestseller" className="btnname2">
+          <Link to="/bestseller" className="btnname">
             SHOP NOW
           </Link>
         </div>
@@ -23,7 +23,7 @@ const Products = () => {
         <img src={pic2} alt="productpic2" />
         <div className="headingbtn-container">
           <span className="sectionname">Sneakers</span>
-          <Link to="/sneaker" className="btnname2">
+          <Link to="/sneaker" className="btnname">
             SHOP NOW
           </Link>
         </div>
@@ -32,7 +32,7 @@ const Products = () => {
         <img src={pic3} alt="productpic3" />
         <div className="headingbtn-container">
           <span className="sectionname">Boots</span>
-          <Link to="/boot" className="btnname2">
+          <Link to="/boot" className="btnname">
             SHOP NOW
           </Link>
         </div>
@@ -41,7 +41,7 @@ const Products = () => {
         <img src={pic4} alt="productpic4" />
         <div className="headingbtn-container">
           <span className="sectionname">Casuals</span>
-          <Link to="/casuals" className="btnname2">
+          <Link to="/casuals" className="btnname">
             SHOP NOW
           </Link>
         </div>
@@ -50,7 +50,7 @@ const Products = () => {
         <img src={pic5} alt="productpic5" />
         <div className="headingbtn-container">
           <span className="sectionname">Men's</span>
-          <Link to="/menbtn" className="btnname2">
+          <Link to="/menbtn" className="btnname">
             SHOP NOW
           </Link>
         </div>
@@ -59,7 +59,7 @@ const Products = () => {
         <img src={pic6} alt="productpic6" />
         <div className="headingbtn-container">
           <span className="sectionname">Women’s</span>
-          <Link to="/womenbtn" className="btnname2">
+          <Link to="/womenbtn" className="btnname">
             SHOP NOW
           </Link>
         </div>

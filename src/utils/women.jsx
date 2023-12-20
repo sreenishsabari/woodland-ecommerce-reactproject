@@ -26,7 +26,7 @@ const WomenShoes = ({ AddToCart, AddToWishlist }) => {
           <img className="imagemenshoe" src={props.image} />
           <div className="details">
             <h2 className="namemenshoe">{props.name}</h2>
-            <span className="pricemenshoe">{props.price}</span>
+            <span className="pricemenshoe">Price:₹{props.price}</span>
             <div className="cartbtns">
               <button onClick={handleAddToCart} className="add-to-cart-btn">
                 Add to Cart

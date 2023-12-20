@@ -225,7 +225,13 @@ const App = () => {
         },
         {
           path: "/kids",
-          element: <Kids AddToCart={AddCart} AddToWishlist={AddWishlist} />,
+          element: (
+            <CategoryPage
+              category={"kids"}
+              AddToCart={AddCart}
+              AddToWishlist={AddWishlist}
+            />
+          ),
         },
         {
           path: "/bags&gear",
@@ -271,9 +277,16 @@ const App = () => {
         },
         {
           path: "/outdoor",
+          // element: (
+          //   <MenWomenApparelPage
+          //     category={"Outdoor"}
+          //     AddToCart={AddCart}
+          //     AddToWishlist={AddWishlist}
+          //   />
+          // ),
           element: (
-            <MenWomenApparelPage
-              category={"Outdoor"}
+            <CategoryPage
+              category={"Boots"}
               AddToCart={AddCart}
               AddToWishlist={AddWishlist}
             />

@@ -19,7 +19,7 @@ const Category = () => {
         <div className="menimage">
           <img src={pic8} alt="categorypic2" />
           <div className="mencategory">
-            <span className="menpara">Shop Men’s Apparel</span>
+            <span className="menpara1">Shop Men’s Apparel</span>
             <Link to="/menapparel" className="menbtn">
               SHOP NOW
             </Link>

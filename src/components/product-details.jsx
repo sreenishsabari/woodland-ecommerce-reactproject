@@ -11,6 +11,8 @@ import menpic from "../images/menpic.jpg";
 import casualpic from "../images/casualpic.jpg";
 import menimg from "../images/menimg.jpg";
 import womenimg from "../images/womenimg.jpg";
+import { BsCart4 } from "react-icons/bs";
+import kidspic from "../images/kidspic.jpg";
 const CategoryPage = ({ category, AddToCart, AddToWishlist }) => {
   let Navigate = useNavigate();
   const filteredProducts = Categories.filter(
@@ -67,7 +69,7 @@ const CategoryPage = ({ category, AddToCart, AddToWishlist }) => {
         <>
           <img src={sneakerpic} alt="menpic" className="menpic" />
           <span className="menimgsub">
-            WOMEN'S SNEAKERS
+            SNEAKERS
             <p className="menpicpara">
               Stay effortless with our cool, trendy sneakers which are crafted
               bold, and unique that inspire sneakers for all ages.
@@ -79,10 +81,10 @@ const CategoryPage = ({ category, AddToCart, AddToWishlist }) => {
         <>
           <img src={menpic} alt="menpic" className="menpic" />
           <span className="menimgsub">
-            MEN'S CASUALS LACE UP
+            MEN'S BOOTS
             <p className="menpicpara">
-              Our Lace-up casual shoes are made of comfortable, durable material
-              and a lace-up closure provides secure and adjustable fit..
+              Hike through the woods, or navigate urban streets, our boots are
+              designed for ultimate comfort and durability.
             </p>
           </span>
         </>
@@ -91,10 +93,10 @@ const CategoryPage = ({ category, AddToCart, AddToWishlist }) => {
         <>
           <img src={casualpic} alt="menpic" className="menpic" />
           <span className="menimgsub">
-            MEN'S BOOTS
+            MEN'S CASUALS LACE UP
             <p className="menpicpara">
-              Hike through the woods, or navigate urban streets, our boots are
-              designed for ultimate comfort and durability.
+              Our Lace-up casual shoes are made of comfortable, durable material
+              and a lace-up closure provides secure and adjustable fit..
             </p>
           </span>
         </>
@@ -165,6 +167,18 @@ const CategoryPage = ({ category, AddToCart, AddToWishlist }) => {
           </span>
         </>
       )}
+      {category.toLowerCase() === "kids" && (
+        <>
+          <img src={kidspic} alt="menpic" className="menpic" />
+          <span className="menimgsub">
+            KID'S SHOES
+            <p className="menpicpara">
+              Hike through the woods, or navigate urban streets, our shoes are
+              designed for ultimate comfort and durability.
+            </p>
+          </span>
+        </>
+      )}
       <div className="menshoespic">
         {filteredProducts.map((values) => (
           <div className="productmenshoepic" key={values.id}>
@@ -181,6 +195,7 @@ const CategoryPage = ({ category, AddToCart, AddToWishlist }) => {
                   onClick={() => handleAddToCart(values)}
                   className="add-to-cart-btnpic"
                 >
+                  <BsCart4 />
                   Add to Cart
                 </button>
                 <button
